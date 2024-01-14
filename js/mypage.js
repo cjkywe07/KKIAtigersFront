@@ -30,6 +30,51 @@ $menuBtn.forEach((btn, index) => {
 })
 
 // 오른쪽 ------------------------------------------------------------------------
+// User --------------------------------------------------------------------------
+const $userModifyBtn = document.querySelector("#user-modify-btn");
+const $passwordInputArr = document.querySelectorAll("#user-password > input");
+const $userErrMsg = document.querySelectorAll(".user-inform-items > .error-msg");
+const $userForm = document.querySelector("#user-content-wrap");
+
+const clickUserModifyBtn = () => {
+    let count = 0;
+    let pwValidMode = false;
+    let pwValid = false;
+
+    $passwordInputArr.forEach((input) => {
+        if(input.value != ""){
+            count++;
+        }
+    })
+    
+    // 비번 검증 시작 
+    if(count > 0) {
+        pwValidMode = true;
+    }
+
+    if(pwValidMode){
+        if(count < 3) {
+            $userErrMsg[1].innerHTML = `* 세 칸 모두 입력해 주세요`;
+            return true;
+        }
+        if($passwordInputArr[1].value.length < 6) {
+            $userErrMsg[1].innerHTML = `* 비밀번호는 6자리 이상으로 입력해 주세요`;
+            return true;
+        }
+        if($passwordInputArr[1].value == $passwordInputArr[2].value){
+            pwValid = true;
+        } else {
+            $userErrMsg[1].innerHTML = `* 비밀번호가 다릅니다`;
+        }
+    }
+
+    if(pwValid && count == 3) {
+        $userForm.submit();
+    } 
+}
+
+$userModifyBtn.addEventListener("click", clickUserModifyBtn);
+
 
 // Diary --------------------------------------------------------------------------
 const modalSetting = () => {
@@ -55,11 +100,14 @@ const $date = document.querySelector("#modal-date");
 const $dateInput = document.querySelector("#modal-date-input");
 const $resultArr = document.querySelectorAll("#result-wrap > div");
 const $resultInput = document.querySelector("#modal-result-input");
+let resultCheck = false;
+const $dirayErrMsg = document.querySelector(".diray-modal-items .error-msg");
 
 // 경기결과 setting
 $resultArr.forEach((text, index) => {
     text.onclick = () => {
         $resultInput.value = text.innerText;
+        resultCheck = true;
         for(let i=0; i<$resultArr.length; i++){
             if(i == index){
                 $resultArr[i].style.opacity = `1`;
@@ -70,14 +118,15 @@ $resultArr.forEach((text, index) => {
     }
 })
 
-const $memoInput = document.querySelector("#memo");
-const $errMsg = document.querySelector(".error-msg");
-let memoCheck = false;
-
 // ✅ 직관기록 submit
 const clickAddBtn = () => {
+    
     $dateInput.value = $date.innerText;
-    document.forms["diray-add-form"].submit(); // 누른 거 controller 전달
+    if(!resultCheck) {
+        $dirayErrMsg.innerHTML = `* 경기 결과를 체크해 주세요`;
+    } else {
+        document.forms["diray-add-form"].submit(); // 누른 거 controller 전달
+    }
 }
 
 $modalAddBtn.addEventListener("click", clickAddBtn);

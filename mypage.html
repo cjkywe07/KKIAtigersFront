@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/mypage.css" />
@@ -30,7 +31,7 @@
                 <img id="close-btn" src="./img/close.png" />
                 <div id="modal-title">오늘의 직관</div>
                 <div id="modal-content">
-                    <form name="diray-add-form" class="display-flex">
+                    <form method="post" name="diray-add-form" class="display-flex">
                         <label class="diray-modal-items">
                             <input id="modal-date-input" name="date" type="hidden" />
                             <div>일시</div>
@@ -51,7 +52,7 @@
                             </select>
                         </label>
                         <label class="diray-modal-items">
-                            <div>결과</div>
+                            <div>결과 <span class="error-msg"></span></div>
                             <input id="modal-result-input" name="result" type="hidden" />
                             <div id="result-wrap" class="display-flex">
                                 <div>승리</div>
@@ -61,7 +62,7 @@
                             </div>
                         </label>
                         <label class="diray-modal-items">
-                            <div>한줄메모<span class="error-msg"></span></div>
+                            <div>한줄메모</div>
                             <input id="memo" name="memo" type="text" />
                         </label>
                     </form>
@@ -79,7 +80,7 @@
                         <div class="mypage-profile-items">MYKIA123</div>
                     </div>
                 </div>
-                <form id="mypage-menu" class="display-flex">
+                <form method="post" id="mypage-menu" class="display-flex">
                     <input type="hidden" name="menu" id="submit-input" />
                     <input type="button" class="mypage-menu-items" value="커뮤니티" />
                     <input type="button" class="mypage-menu-items" value="다이어리" />
@@ -92,7 +93,7 @@
                         <div id="community-main-title" class="display-flex-set">커뮤니티</div>
                     </div>
                     <div class="community-items">
-                        <div class="community-title">📄 작성한 글</div>
+                        <div class="community-title">작성한 글</div>
                         <div class="community-box display-flex">
                             <div class="community-one">
                                 <div>안녕하세요ddddddddddddddddddd</div>
@@ -102,7 +103,7 @@
                         </div>
                     </div>
                     <div class="community-items">
-                        <div class="community-title">⌨️ 댓글 쓴 글</div>
+                        <div class="community-title">댓글 쓴 글</div>
                         <div class="community-box display-flex">
                             <div class="community-one">
                                 <div>안녕하세요ddddddddddddddddddd</div>
@@ -112,7 +113,7 @@
                         </div>
                     </div>
                     <div class="community-items">
-                        <div class="community-title">🍔 저장한 맛집</div>
+                        <div class="community-title">저장한 맛집</div>
                         <div class="community-box display-flex">
                             <div class="community-one recommend-store">
                                 <!-- 데이터 받아올 때 지역에 따라 색 바꾸기 -->
@@ -123,12 +124,12 @@
                         </div>
                     </div>
                     <div class="community-items">
-                        <div class="community-title">❣️ 마음에 든 사진</div>
+                        <div class="community-title">마음에 든 사진</div>
                         <div class="community-box display-flex">
                             <img src="./img/핑구1.jpg" />
-                            <img src="./img/챔필.jpg">
-                            <img src="./img/양현종.jpg">
-                            <img src="./img/2017.jpg">
+                            <img src="./img/챔필.jpg" />
+                            <img src="./img/양현종.jpg" />
+                            <img src="./img/2017.jpg" />
                         </div>
                     </div>
                 </div>
@@ -160,7 +161,53 @@
                 <div class="fragment" id="user-wrapper">
                     <div class="display-flex">
                         <div id="user-title" class="display-flex-set">회원정보</div>
-                        <div></div>
+                        <!-- intelliJ validation : 현재비번, 닉네임 중복 -->
+                        <form method="post" name="user-content" id="user-content-wrap" class="display-flex">
+                            <div class="user-inform-items">
+                                <div class="user-inform-title">프로필 사진</div>
+                                <img id="user-pic" src="./img/핑구1.jpg" />
+                            </div>
+                            <label class="user-inform-items">
+                                <div class="error-msg"></div>
+                                <div class="user-inform-title">닉네임</div>
+                                <input name="nickname" type="text" placeholder="어우기" />
+                            </label>
+                            <div class="user-inform-items">
+                                <div class="user-inform-title">아이디</div>
+                                <div class="user-inform-content">MYKIA123</div>
+                            </div>
+                            <label class="user-inform-items" id="user-password">
+                                <div class="user-inform-title">비밀번호</div>
+                                <div class="error-msg"></div>
+                                <input name="password" type="password" placeholder="현재 비밀번호" />
+                                <input name="new-password" type="password" placeholder="신규 비밀번호" />
+                                <input type="password" placeholder="비밀번호 확인" />
+                            </label>
+                            <div class="user-inform-items">
+                                <div class="user-inform-title">이름</div>
+                                <div class="user-inform-content">홍길동</div>
+                            </div>
+                            <div class="user-inform-items">
+                                <div class="user-inform-title">이메일</div>
+                                <div class="user-inform-content">hong123@naver.com</div>
+                            </div>
+                            <label class="user-inform-items">
+                                <div class="user-inform-title">성별</div>
+                                <label for="radio-female">
+                                    <input name="gender" id="radio-female" type="radio" value="여자" />
+                                    여
+                                </label>
+                                <label for="radio-male">
+                                    <input name="gender" id="radio-male" type="radio" value="남자" />
+                                    남
+                                </label>
+                            </label>
+                            <label class="user-inform-items">
+                                <div class="user-inform-title">생년월일</div>
+                                <input type="date" name="birth" />
+                            </label>
+                            <input id="user-modify-btn" type="button" value="수정완료">
+                        </form>
                     </div>
                 </div>
             </div>

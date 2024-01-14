@@ -192,7 +192,7 @@
 #user-wrapper > div {
     width: 100%;
     height: 100%;
-    justify-content: center;
+    flex-direction: column;
 }
 
 #user-wrapper #user-title, #community-wrapper #community-main-title {
@@ -203,6 +203,117 @@
     border-bottom: 2px solid;
     padding-bottom: 20px;
     margin: 20px 0;
+}
+
+#user-content-wrap {
+    flex-wrap: wrap;
+    width: 990px;
+    height: 555px;
+    position: relative;
+}
+
+#user-content-wrap .user-inform-items {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 30px;
+    border: 2px solid;
+    border-radius: 5px;
+    width: calc(940px / 3);
+    height: calc(480px / 4);
+
+    &:nth-child(1) {
+        height: 350px;
+    }
+    &:nth-child(2) {
+        top: 408px;
+    }
+    &:nth-child(3) {
+        left: 338px;
+    }
+    &:nth-child(4) {
+        height: 200px;
+        top: 179px;
+        left: 338px;
+    }
+    &:nth-child(5) {
+        right: 0px;
+    }
+    &:nth-child(6) {
+        right: 0px;
+        top: 179px;
+    }
+    &:nth-child(7) {
+        right: 0px;
+        top: 328px;
+        font-size: 18px;
+    }
+    &:nth-child(8) {
+        left: 338px;
+        top: 408px;
+    }
+}
+
+.user-inform-items .user-inform-title {
+    position: absolute;
+    background-color: white;
+    top: -13px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 15px;
+}
+
+.user-inform-items > input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 3px;
+    font-size: 15px;
+
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.user-inform-items > .user-inform-content {
+    font-weight: 700;
+    font-size: 20px;
+    width: 280px;
+    text-align: center;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.user-inform-items > #user-pic {
+    width: 250px;
+    border-radius: 50%;
+}
+
+#user-modify-btn {
+    width: calc(940px / 3);
+    height: 50px;
+    padding: 7px;
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    font-weight: 600;
+    font-size: 16px;
+    right: 0;
+    top: 477px;
+    background-color: var(--yellow-btn);
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--yellow-btn-hover);
+    }
 }
 
 /* Diray -------------------------------------------------------*/
