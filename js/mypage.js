@@ -31,7 +31,7 @@ $menuBtn.forEach((btn, index) => {
 
 // 오른쪽 ------------------------------------------------------------------------
 
-// 기본 셋팅 ------------------
+// Diary --------------------------------------------------------------------------
 const modalSetting = () => {
     // 매달 배열 셋팅
     const $month = document.querySelector(".year-month");
@@ -77,7 +77,7 @@ let memoCheck = false;
 // ✅ 직관기록 submit
 const clickAddBtn = () => {
     $dateInput.value = $date.innerText;
-    // document.forms["diray-add-form"].submit(); // 누른 거 controller 전달
+    document.forms["diray-add-form"].submit(); // 누른 거 controller 전달
 }
 
 $modalAddBtn.addEventListener("click", clickAddBtn);

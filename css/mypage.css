@@ -123,7 +123,70 @@
     border: 2px solid;
     border-radius: 5px;
     margin-top: 10px;
+    align-items: center;
+    column-gap: 15px;
+    overflow-x: scroll;
+    padding: 0 15px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
+
+.community-box .community-one {
+    height: 125px;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ebf0f2;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.community-box .community-one > div {
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 25%;
+    line-height: 25px;
+
+    &:first-of-type {
+        font-size: 24px;
+        font-weight: 600;
+        height: 50%;
+        line-height: 50px;
+    }
+}
+
+.community-box .recommend-store > div {
+    width: 280px
+}
+
+.community-box .community-one > .community-writer {
+    color: var(--kia-red);
+}
+
+.community-box .community-one .community-region {
+    background-color: var(--kia-red);
+    padding: 3px 7px;
+    border-radius: 5px;
+    color: white;
+    margin-right: 10px;
+}
+
+.community-box img {
+    border-radius: 5px;
+    border: 2px solid;
+    height: 130px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 
 /* User -------------------------------------------------------*/
 #user-wrapper > div {
