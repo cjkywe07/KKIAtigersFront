@@ -62,8 +62,14 @@
     margin-bottom: 10px;
     background-color: #ffeded;
     padding: 0 18px;
+    color: #eb6780;
+
     &:focus{
         outline: none;
+    }
+
+    &::placeholder {
+        color: #eb6780;
     }
 }
 
