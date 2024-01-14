@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <script defer src="./js/main.js"></script>
+        <title>KKIA TIGERS</title>
+    </head>
+    <body>
+        <header>
+            <div class="display-flex-set">
+                <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
+                <a class="header-menu">GAMES</a>
+                <a class="header-menu">MARKET</a>
+                <a class="header-menu">COMMUNITY</a>
+            </div>
+            <div class="display-flex-set">
+                <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
+                <a id="login-btn" href="./login.html">LOGIN</a>
+                <!-- intelliJ : login/logout 텍스트만 바꾸기 -->
+            </div>
+        </header>
+        <div id="main-wrapper">
+            <div id="main-today" class="display-flex-set">
+                <img id="main-today-title" src="./img/ball.png" />
+                <ul id="main-today-opponent" class="display-flex-set">
+                    <li>Twins</li>
+                    <img src="./img/baseball.png" />
+                    <li>Tigers</li>
+                </ul>
+                <ul id="main-today-entry" class="display-flex">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>0</li>
+                </ul>
+                <div id="main-today-place" class="display-flex">
+                    <div class="place-content display-flex-set" id="place-map">지도</div>
+                    <div class="place-content display-flex-set" id="place-weather">날씨</div>
+                </div>
+            </div>
+            <div id="main-fan" class="display-flex-set">
+                <div id="main-fan-content">
+                    <ul id="slide-wrap" class="display-flex">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <ul id="slide-btn-wrap" class="display-flex">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="main-news" class="display-flex-set">
+                <div id="main-news-title">NEWS 📰</div>
+                <div id="main-news-content"></div>
+                <!-- 뉴스 api 가져올 수 있나 -->
+            </div>
+        </div>
+    </body>
+</html>

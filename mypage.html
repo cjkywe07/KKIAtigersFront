@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/mypage.css" />
+        <script defer src="./js/mypage.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <title>마이페이지</title>
+    </head>
+    <body>
+        <header>
+            <div class="display-flex-set">
+                <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
+                <a class="header-menu">GAMES</a>
+                <a class="header-menu">MARKET</a>
+                <a class="header-menu">COMMUNITY</a>
+            </div>
+            <div class="display-flex-set">
+                <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
+                <a id="login-btn" href="./login.html">LOGIN</a>
+                <!-- intelliJ : login/logout 텍스트만 바꾸기 -->
+            </div>
+        </header>
+        <!--modal-->
+        <div id="diray-modal-wrap" class="display-flex-set">
+            <div id="diray-modal" class="display-flex">
+                <img id="close-btn" src="./img/close.png">
+                <div id="modal-title">오늘의 직관</div>
+                <div id="modal-content">
+                    <form name="diray-add-form" class="display-flex">
+                        <label class="diray-modal-items">
+                            <input id="modal-date-input" name="date" type="hidden"/>
+                            <div>일시</div>
+                            <div id="modal-date"></div>
+                        </label>
+                        <label class="diray-modal-items">
+                            <div>장소</div>
+                            <select id="modal-region" name="region">
+                                <option name="region" value="광주기아챔피언스필드">광주기아챔피언스필드</option>
+                                <option name="region" value="잠실종합운동장">잠실 종합운동장</option>
+                                <option name="region" value="고척스카이돔">고척스카이돔</option>
+                                <option name="region" value="수원KT위즈파크">수원KT위즈파크</option>
+                                <option name="region" value="인천SSG랜더스필드">인천SSG랜더스필드</option>
+                                <option name="region" value="대구삼성라이온즈파크">대구삼성라이온즈파크</option>
+                                <option name="region" value="부산사직종합운동장">부산사직종합운동장</option>
+                                <option name="region" value="한화생명이글스파크">한화생명이글스파크</option>
+                                <option name="region" value="창원NC파크">창원NC파크</option>
+                            </select>
+                        </label>
+                        <label class="diray-modal-items">
+                            <div>결과</div>
+                            <input id="modal-result-input" name="result" type="hidden"/>
+                            <div id="result-wrap" class="display-flex">
+                                <div>승리</div>
+                                <div>패배</div>
+                                <div>무승부</div>
+                                <div>취소</div>
+                            </div>
+                        </label>
+                        <label class="diray-modal-items">
+                            <div>한줄메모<span class="error-msg"></span></div>
+                            <input id="memo" name="memo" type="text">
+                        </label>
+                    </form>
+                </div>
+                <input type="button" id="modal-add-btn" value="추가"/>
+            </div>
+        </div>
+        <!-- main -->
+        <div id="wrapper" class="display-flex">
+            <div id="mypage-left-wrap" class="display-flex-set">
+                <div id="mypage-profile" class="display-flex">
+                    <img id="mypage-profile-pic" src="./img/핑구1.jpg" />
+                    <div id="mypage-profile-inform">
+                        <div class="mypage-profile-items">어우기</div>
+                        <div class="mypage-profile-items">MYKIA123</div>
+                    </div>
+                </div>
+                <form id="mypage-menu" class="display-flex">
+                    <input type="hidden" name="menu" id="submit-input" />
+                    <input type="button" class="mypage-menu-items" value="커뮤니티" />
+                    <input type="button" class="mypage-menu-items" value="다이어리" />
+                    <input type="button" class="mypage-menu-items" value="회원정보" />
+                </form>
+            </div>
+            <div id="mypage-right-wrap">
+                <div class="fragment display-flex" id="community-wrapper">
+                    <div class="display-flex-set">
+                        <div id="community-main-title" class="display-flex-set">커뮤니티</div>
+                    </div>
+                    <div class="community-items">
+                        <div class="community-title">📄 내 글</div>
+                        <div class="community-box">바둑판 + 가로스크롤</div>
+                    </div>
+                    <div class="community-items">
+                        <div class="community-title">⌨️ 내 댓글</div>
+                        <div class="community-box"></div>
+                    </div>
+                    <div class="community-items">
+                        <div class="community-title">🍔 저장한 맛집</div>
+                        <div class="community-box"></div>
+                    </div>
+                    <div class="community-items">
+                        <div class="community-title">📷 마음에 든 사진</div>
+                        <div class="community-box"></div>
+                    </div>
+                </div>
+                <div class="fragment" id="diray-wrapper">
+                    <div id="my-graph" class="display-flex">
+                        <div>직관 승률</div>
+                        <div><span>50%</span> (5/10)</div>
+                    </div>
+                    <div class="cal-wrap display-flex-set">
+                        <div class="cal-nav display-flex-set">
+                            <a href="javascript:;" class="nav-btn go-prev"></a>
+                            <div class="year-month"></div>
+                            <a href="javascript:;" class="nav-btn go-next"></a>
+                        </div>
+                        <div class="cal-main">
+                            <div class="cal-days display-flex">
+                                <div class="day">MON</div>
+                                <div class="day">TUE</div>
+                                <div class="day">WED</div>
+                                <div class="day">THU</div>
+                                <div class="day">FRI</div>
+                                <div class="day">SAT</div>
+                                <div class="day">SUN</div>
+                            </div>
+                            <div class="dates"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment" id="user-wrapper">
+                    <div class="display-flex">
+                        <div id="user-title" class="display-flex-set">회원정보</div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
