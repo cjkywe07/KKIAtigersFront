@@ -1,19 +1,19 @@
 #game-wrapper {
-    width: 100%;
     width: 1200px;
+    height: 1020px;
     margin: 0 auto;
     position: relative;
 }
 
 /* title */
 #game-banner {
-    width: 100%;
+    width: 1156px;
     font-weight: 600;
     margin-bottom: 20px;
     border-radius: 5px;
     justify-content: space-between;
     position: absolute;
-    top: 11px;
+    top: 44px;
 }
 
 #game-banner > div {
@@ -52,7 +52,10 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 30px 20px 20px 20px;
+    background-color: #eff6ff;
 }
 
 .cal-wrap .cal-nav {
@@ -118,7 +121,8 @@
     font-weight: 700;
     text-align: center;
     border: 2px solid black;
-    border-width: 0 2px 2px 0;    
+    border-width: 0 2px 2px 0; 
+    background-color: white;   
 }
 
 .cal-wrap .cal-main .dates {

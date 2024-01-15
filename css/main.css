@@ -8,13 +8,11 @@
 /* today -------------------------------*/
 #main-today {
     width: 830px;
-    padding-top: 50px;
-    border: 2px solid ;
+    height: 720px;
+    border: 2px solid;
     border-radius: 5px;
     flex-direction: column;
-
     position: absolute;
-    top: 35px;
 }
 
 #main-today-title {
@@ -23,12 +21,12 @@
     position: absolute;
     background-color: #ffffff;
     border-radius: 50%;
-    top: -50px;
+    top: -32px;
 }
 
 #main-today-opponent, #main-today-entry {
     width: 787px;
-    height: 125px;
+    height: 150px;
     border: 2px solid black;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -45,7 +43,7 @@
 }
 
 #main-today-entry > li {
-    width: 84.5px;
+    width: 78px;
     text-align: center;
     border-right: 2px solid black;
 
@@ -55,13 +53,12 @@
 }
 
 #main-today-place {
-    column-gap: 23px;
-    margin-bottom: 20px;
+    column-gap: 20px;
 }
 
 .place-content {
     width: 524px;
-    height: 306px;
+    height: 330px;
 
     border:2px solid black;
     border-radius: 5px;
@@ -79,7 +76,6 @@
     border-radius: 5px;
     
     position: absolute;
-    top: 35px;
     right: 0px;
 }
 
@@ -144,13 +140,13 @@
 /* news -------------------------------*/
 #main-news {
     width: 350px;
-    height: 247px;
+    height: 298px;
     border: 2px solid ;
     border-radius: 5px;
     
     flex-direction: column;
     position: absolute;
-    top: 457px;
+    top: 422px;
     right: 0px;
 }
 
@@ -164,6 +160,6 @@
 #main-news-content {
     background-color: #eaeaea;
     width: 310px;
-    height: 145px;
+    height: 211px;
     border-radius: 5px;
 }

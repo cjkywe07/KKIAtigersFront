@@ -206,7 +206,7 @@
 
 #user-content-wrap {
     flex-wrap: wrap;
-    width: 927px;
+    width: 914px;
     height: 555px;
     position: relative;
 }
@@ -221,7 +221,7 @@
     top: 30px;
     border: 2px solid;
     border-radius: 5px;
-    width: calc(888px / 3);
+    width: calc(875px / 3);
     height: calc(480px / 4);
 
     &:nth-child(1) {
@@ -231,12 +231,12 @@
         top: 408px;
     }
     &:nth-child(3) {
-        left: 315px;
+        left: 311px;
     }
     &:nth-child(4) {
         height: 200px;
         top: 179px;
-        left: 315px;
+        left: 311px;
     }
     &:nth-child(5) {
         right: 0px;
@@ -251,7 +251,7 @@
         font-size: 18px;
     }
     &:nth-child(8) {
-        left: 315px;
+        left: 311px;
         top: 408px;
     }
 }
@@ -296,7 +296,7 @@
 }
 
 #user-modify-btn {
-    width: calc(888px / 3);
+    width: calc(875px / 3);
     height: 50px;
     padding: 7px;
     border: 2px solid;
