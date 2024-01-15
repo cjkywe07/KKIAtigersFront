@@ -1,13 +1,6 @@
-#main-wrapper {
-    height: calc(100vh - 135px);
-    width: 1300px;
-    margin: 0 auto;
-    position: relative;
-}
-
 /* today -------------------------------*/
 #main-today {
-    width: 900px;
+    width: 828px;
     padding-top: 50px;
     border: 2px solid ;
     border-radius: 5px;
@@ -27,7 +20,7 @@
 }
 
 #main-today-opponent, #main-today-entry {
-    width: 849px;
+    width: 778px;
     height: 120px;
     border: 2px solid black;
     border-radius: 5px;
@@ -60,20 +53,20 @@
 }
 
 .place-content {
-    width: 526px;
+    width: 515px;
     height: 300px;
 
     border:2px solid black;
     border-radius: 5px;
 
     &:last-of-type{
-        width: 300px;
+        width: 240px;
     }
 }
 
 /* fan picture -------------------------------*/
 #main-fan {
-    width: 376px;
+    width: 350px;
     height: 402px;
     border: 2px solid ;
     border-radius: 5px;
@@ -143,7 +136,7 @@
 
 /* news -------------------------------*/
 #main-news {
-    width: 376px;
+    width: 350px;
     height: 242px;
     border: 2px solid ;
     border-radius: 5px;

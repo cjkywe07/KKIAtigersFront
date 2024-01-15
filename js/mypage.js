@@ -174,7 +174,7 @@ function calendarInit() {
         currentDate = thisMonth.getDate();
 
         // 이전 달의 마지막 날 날짜와 요일 구하기
-        var startDay = new Date(currentYear, currentMonth, 0);
+        var startDay = new Date(currentYear, currentMonth, 0); // 0번째는 지난달 마지막날을 의미한다
         var prevDate = startDay.getDate();
         var prevDay = startDay.getDay();
 
@@ -182,8 +182,6 @@ function calendarInit() {
         var endDay = new Date(currentYear, currentMonth + 1, 0);
         var nextDate = endDay.getDate();
         var nextDay = endDay.getDay();
-
-        // console.log(prevDate, prevDay, nextDate, nextDay);
 
         // 현재 월 표기
         $('.year-month').text(currentYear + '.' + (currentMonth + 1));
