@@ -81,10 +81,11 @@ function calendarInit() {
 
         // 높이 조절 
         const $mainHeight = $(".cal-main").height();
+        console.log($mainHeight);
 
-        if($mainHeight == 870) {
+        if($mainHeight == 855) {
             $('.cal-wrap').css('height', 1050);
-        } else if($mainHeight == 1030) {
+        } else if($mainHeight == 1015) {
             $('.cal-wrap').css('height', 1210);
         }
     }
