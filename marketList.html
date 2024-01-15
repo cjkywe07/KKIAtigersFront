@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/marketList.css" />
+        <!-- <script defer src="./js/marketList.js"></script> -->
+        <title>마켓</title>
+    </head>
+    <body>
+        <header>
+            <div class="display-flex-set">
+                <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
+                <a class="header-menu">GAMES</a>
+                <a class="header-menu">MARKET</a>
+                <a class="header-menu">COMMUNITY</a>
+            </div>
+            <div class="display-flex-set">
+                <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
+                <a id="login-btn" href="./login.html">LOGIN</a>
+            </div>
+        </header>
+
+        <div id="marketList-wrap">
+            <div id="list-header-wrap" class="display-flex">
+                <div id="keyword-wrap" class="display-flex">
+                    <p>인기키워드</p>
+                    <p>#유니폼</p>
+                    <p>#야구공</p>
+                    <p>#김도영</p>
+                    <p>#티켓</p>
+                </div>
+
+                <div id="btn-wrap" class="display-flex-set">
+                    <a id="write-btn" href="">작성하기</a>
+
+                    <form name="search-form" action="" autocomplete="off" class="display-flex-set">
+                        <button type="button" id="initial-btn">초기화</button>
+                        <input type="text" id="search-input" placeholder="검색어를 입력하세요" />
+                        <button type="submit" id="search-btn">
+                            <img id="search-btn-img" src="./img/search.png" alt="search" />
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="list-wrap" class="display-flex">
+                <div class="list-content">
+                    <a href="">
+                        <img class="product-img" src="./img/goods.jpg" />
+                        <div class="product-name">굿즈굿즈굿즈굿즈굿즈굿즈</div>
+                        <div class="product-price">50,000원</div>
+                        <div class="product-region">전국</div>
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="product-img" src="./img/goods.jpg" />
+                        <div class="product-name">굿즈</div>
+                        <div class="product-price">50,000</div>
+                        <div class="product-region">전국</div>
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="product-img" src="./img/goods.jpg" />
+                        <div class="product-name">굿즈</div>
+                        <div class="product-price">50,000</div>
+                        <div class="product-region">전국</div>
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="product-img" src="./img/goods.jpg" />
+                        <div class="product-name">굿즈</div>
+                        <div class="product-price">50,000</div>
+                        <div class="product-region">전국</div>
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="product-img" src="./img/goods.jpg" />
+                        <div class="product-name">굿즈</div>
+                        <div class="product-price">50,000</div>
+                        <div class="product-region">전국</div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="pagination-wrap" class="display-flex-set">
+                <ul id="pagination-content" class="display-flex">
+                    <li>
+                        <a href=""><img src="./img/prev.png" height="12px" /></a>
+                    </li>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li>
+                        <a href=""><img src="./img/next.png" height="12px" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
