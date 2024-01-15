@@ -83,10 +83,10 @@ function calendarInit() {
         const $mainHeight = $(".cal-main").height();
         console.log($mainHeight);
 
-        if($mainHeight == 855) {
-            $('.cal-wrap').css('height', 1050);
-        } else if($mainHeight == 1015) {
-            $('.cal-wrap').css('height', 1210);
+        if($mainHeight == 845) {
+            $('.cal-wrap').css('height', 1020);
+        } else if($mainHeight == 1005) {
+            $('.cal-wrap').css('height', 1180);
         }
     }
 

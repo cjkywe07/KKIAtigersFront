@@ -18,7 +18,7 @@
 
 #game-banner > div {
     height: 50px;
-    line-height: 50px;
+    line-height: 48px;
     border: 2px solid black;
     border-radius: 5px;
     background-color: navy;
@@ -52,7 +52,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .cal-wrap .cal-nav {
