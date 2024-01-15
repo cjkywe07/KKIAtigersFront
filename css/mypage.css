@@ -1,6 +1,6 @@
-#wrapper {
+#mypage-wrapper {
     height: calc(100vh - 165px);
-    width: 1300px;
+    width: 1200px;
     margin: 0 auto;
     position: relative;
 }
@@ -13,7 +13,7 @@
 
 #mypage-left-wrap {
     border-right: 2px solid;
-    padding-right: 27px;
+    padding-right: 20px;
 }
 
 #mypage-left-wrap #mypage-profile {
@@ -72,10 +72,10 @@
 /* right -----------------------*/
 
 #mypage-right-wrap {
-    width: calc(1300px - 229px);
+    width: calc(1200px - 229px);
     border: 2px solid ;
     border-radius: 5px;
-    margin-left: 27px;
+    margin-left: 20px;
 }
 
 .fragment {
@@ -95,7 +95,7 @@
     align-items: center;
     flex-direction: column;
     row-gap: 10px;
-    padding: 27px;
+    padding: 20px;
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -196,7 +196,7 @@
 }
 
 #user-wrapper #user-title, #community-wrapper #community-main-title {
-    width: 990px;
+    width: 927px;
     height: 80px;
     font-weight: 600;
     font-size: 25px;
@@ -207,7 +207,7 @@
 
 #user-content-wrap {
     flex-wrap: wrap;
-    width: 990px;
+    width: 927px;
     height: 555px;
     position: relative;
 }
@@ -222,7 +222,7 @@
     top: 30px;
     border: 2px solid;
     border-radius: 5px;
-    width: calc(940px / 3);
+    width: calc(888px / 3);
     height: calc(480px / 4);
 
     &:nth-child(1) {
@@ -232,12 +232,12 @@
         top: 408px;
     }
     &:nth-child(3) {
-        left: 338px;
+        left: 315px;
     }
     &:nth-child(4) {
         height: 200px;
         top: 179px;
-        left: 338px;
+        left: 315px;
     }
     &:nth-child(5) {
         right: 0px;
@@ -252,7 +252,7 @@
         font-size: 18px;
     }
     &:nth-child(8) {
-        left: 338px;
+        left: 315px;
         top: 408px;
     }
 }
@@ -297,7 +297,7 @@
 }
 
 #user-modify-btn {
-    width: calc(940px / 3);
+    width: calc(888px / 3);
     height: 50px;
     padding: 7px;
     border: 2px solid;
@@ -394,20 +394,25 @@
 }
 
 .cal-wrap .cal-main {
-    padding-top: 20px;
     position: relative;
     margin: 0 auto;
 }
 
 .cal-wrap .cal-main .cal-days {
-    margin-bottom: 20px;
-    border-bottom: 2px solid ;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    margin: 20px 0;
+}
+
+.cal-wrap .cal-main .cal-days .day {
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
 }
 
 .cal-wrap .cal-main .day {
     width: calc(100% / 7);
-    height: 70px;
-    text-align: left;
+    height: 75px;
     font-size: 20px;
     font-weight: 600;
     text-align: center;

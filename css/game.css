@@ -1,0 +1,141 @@
+/* title */
+#game-banner {
+    width: 1100px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    position: absolute;
+    top: 11px;
+}
+
+#game-banner > div {
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: navy;
+    color: white;
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#game-banner-title {
+    padding: 0 15px;
+}
+
+#game-banner-content > div {
+    width: 100px;
+    text-align: center;
+    border-right: 2px solid black;
+    color: white;
+    
+    &:last-of-type {
+        border: none;
+        background-color: var(--tiger-orange);
+        color: white;
+    }
+}
+
+/* calendar */
+
+.cal-wrap {
+    width:1300px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+.cal-wrap .cal-nav {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 78px;
+    margin-bottom: 30px;
+}
+
+.cal-wrap .cal-nav .year-month {
+    width: 300px;
+    text-align: center;
+    line-height: 1;
+}
+
+.cal-wrap .cal-nav .go-prev,
+.cal-wrap .cal-nav .go-next {
+    display: block;
+    width: 50px;
+    height: 78px;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cal-wrap .cal-nav .go-prev::before, /* 근데 왜 before를 붙이지? */
+.cal-wrap .cal-nav .go-next::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #000;
+    border-width: 3px 3px 0 0; /* border-with : 부분 border */
+    transition: border 0.1s;
+}
+
+.cal-wrap .cal-nav .go-prev::before {
+    transform: rotate(-135deg);
+}
+
+.cal-wrap .cal-nav .go-next::before {
+    transform: rotate(45deg);
+}
+
+.cal-wrap .cal-main {
+    width: 1100px;
+    position: relative;
+    margin: 0 auto;
+    border-left: 2px solid black;
+}
+
+.cal-wrap .cal-main .cal-days .day {
+    height: 55px;
+    line-height: 55px;
+    border-top: 2px solid black;
+}
+
+.cal-wrap .cal-main .day {
+    width: calc(100% / 7);
+    height: 160px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    border: 2px solid black;
+    border-width: 0 2px 2px 0;    
+}
+
+.cal-wrap .cal-main .dates {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+}
+
+.cal-wrap .cal-main .dates .day > span {
+    width: 100%;
+    height: 100%;
+    color: gray;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.cal-wrap .cal-main .day:nth-child(7n -1) {
+    color: #3c6ffa;
+}
+
+.cal-wrap .cal-main .day:nth-child(7n) {
+    color: #ed2a61;
+}
+
+.cal-wrap .cal-main .day.disable {
+    color: white;
+}
