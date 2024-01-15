@@ -48,7 +48,8 @@
     flex-direction: column;
     row-gap: 25px;
 }
-.txt-wrap, .txt-wrap-middle {
+.txt-wrap,
+.txt-wrap-middle {
     padding: 10px 13px;
     width: 500px;
     border: 2px solid;

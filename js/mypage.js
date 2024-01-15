@@ -9,25 +9,24 @@ const $closeModalBtn = document.querySelector("#close-btn");
 const $modalDate = document.querySelector("#modal-date");
 const $modalPlace = document.querySelector("#modal-place");
 
-
-// 왼쪽 ------------------------------------------------------------------------ 
+// 왼쪽 ------------------------------------------------------------------------
 const clickMenuBtn = (num) => {
     $fragmentArr.forEach((fragment, index) => {
-        if(index == num){
-            fragment.style.display = 'block';
+        if (index == num) {
+            fragment.style.display = "block";
         } else {
             fragment.style.display = `none`;
         }
-    })
-}
+    });
+};
 
 $menuBtn.forEach((btn, index) => {
     btn.onclick = () => {
         clickMenuBtn(index);
         $submitInput.value = btn.value;
         // $menuBtnForm.submit(); // 누른 거 controller 전달
-    }
-})
+    };
+});
 
 // 오른쪽 ------------------------------------------------------------------------
 // User --------------------------------------------------------------------------
@@ -42,39 +41,38 @@ const clickUserModifyBtn = () => {
     let pwValid = false;
 
     $passwordInputArr.forEach((input) => {
-        if(input.value != ""){
+        if (input.value != "") {
             count++;
         }
-    })
-    
-    // 비번 검증 시작 
-    if(count > 0) {
+    });
+
+    // 비번 검증 시작
+    if (count > 0) {
         pwValidMode = true;
     }
 
-    if(pwValidMode){
-        if(count < 3) {
+    if (pwValidMode) {
+        if (count < 3) {
             $userErrMsg[1].innerHTML = `* 세 칸 모두 입력해 주세요`;
             return true;
         }
-        if($passwordInputArr[1].value.length < 6) {
+        if ($passwordInputArr[1].value.length < 6) {
             $userErrMsg[1].innerHTML = `* 비밀번호는 6자리 이상으로 입력해 주세요`;
             return true;
         }
-        if($passwordInputArr[1].value == $passwordInputArr[2].value){
+        if ($passwordInputArr[1].value == $passwordInputArr[2].value) {
             pwValid = true;
         } else {
             $userErrMsg[1].innerHTML = `* 비밀번호가 다릅니다`;
         }
     }
 
-    if(pwValid && count == 3) {
+    if (pwValid && count == 3) {
         $userForm.submit();
-    } 
-}
+    }
+};
 
 $userModifyBtn.addEventListener("click", clickUserModifyBtn);
-
 
 // Diary --------------------------------------------------------------------------
 const modalSetting = () => {
@@ -86,14 +84,14 @@ const modalSetting = () => {
     $dateArr.forEach((date) => {
         date.onclick = () => {
             $modal.style.visibility = `visible`;
-            $modalDate.innerHTML = `${$month.innerText}.${date.innerText}`
-        }
-    })
+            $modalDate.innerHTML = `${$month.innerText}.${date.innerText}`;
+        };
+    });
     // 모달창 닫히기
     $closeModalBtn.onclick = () => {
         $modal.style.visibility = `hidden`;
-    }
-}
+    };
+};
 
 // submit setting ------------------
 const $date = document.querySelector("#modal-date");
@@ -108,31 +106,30 @@ $resultArr.forEach((text, index) => {
     text.onclick = () => {
         $resultInput.value = text.innerText;
         resultCheck = true;
-        for(let i=0; i<$resultArr.length; i++){
-            if(i == index){
+        for (let i = 0; i < $resultArr.length; i++) {
+            if (i == index) {
                 $resultArr[i].style.opacity = `1`;
             } else {
                 $resultArr[i].style.opacity = ``;
             }
         }
-    }
-})
+    };
+});
 
 // ✅ 직관기록 submit
 const clickAddBtn = () => {
-    
     $dateInput.value = $date.innerText;
-    if(!resultCheck) {
+    if (!resultCheck) {
         $dirayErrMsg.innerHTML = `* 경기 결과를 체크해 주세요`;
     } else {
         document.forms["diray-add-form"].submit(); // 누른 거 controller 전달
     }
-}
+};
 
 $modalAddBtn.addEventListener("click", clickAddBtn);
 
 // 달력 ------------------
-$(document).ready(function() {
+$(document).ready(function () {
     calendarInit();
 });
 
@@ -145,17 +142,15 @@ $(document).ready(function() {
 */
 
 function calendarInit() {
-
     // 날짜 정보 가져오기
     var date = new Date(); // 현재 날짜(로컬 기준) 가져오기
-    var utc = date.getTime() + (date.getTimezoneOffset() * 60 * 1000); // uct 표준시 도출
+    var utc = date.getTime() + date.getTimezoneOffset() * 60 * 1000; // uct 표준시 도출
     var kstGap = 9 * 60 * 60 * 1000; // 한국 kst 기준시간 더하기
     var today = new Date(utc + kstGap); // 한국 시간으로 date 객체 만들기(오늘)
-  
+
     var thisMonth = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     // 달력에서 표기하는 날짜 객체
-  
-    
+
     var currentYear = thisMonth.getFullYear(); // 달력에서 표기하는 연
     var currentMonth = thisMonth.getMonth(); // 달력에서 표기하는 월
     var currentDate = thisMonth.getDate(); // 달력에서 표기하는 일
@@ -167,7 +162,6 @@ function calendarInit() {
     renderCalender(thisMonth);
 
     function renderCalender(thisMonth) {
-
         // 렌더링을 위한 데이터 정리
         currentYear = thisMonth.getFullYear();
         currentMonth = thisMonth.getMonth();
@@ -184,45 +178,45 @@ function calendarInit() {
         var nextDay = endDay.getDay();
 
         // 현재 월 표기
-        $('.year-month').text(currentYear + '.' + (currentMonth + 1));
+        $(".year-month").text(currentYear + "." + (currentMonth + 1));
 
         // 렌더링 html 요소 생성
-        calendar = document.querySelector('.dates')
-        calendar.innerHTML = '';
-        
+        calendar = document.querySelector(".dates");
+        calendar.innerHTML = "";
+
         // 지난달
         for (var i = prevDate - prevDay + 1; i <= prevDate; i++) {
-            calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + '</div>'
+            calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + "</div>";
         }
         // 이번달
         for (var i = 1; i <= nextDate; i++) {
-            calendar.innerHTML = calendar.innerHTML + '<div class="day current display-flex-set"><span>' + i + '</span></div>'
+            calendar.innerHTML = calendar.innerHTML + '<div class="day current display-flex-set"><span>' + i + "</span></div>";
         }
         // 다음달
         for (var i = 1; i <= (7 - nextDay == 7 ? 0 : 7 - nextDay); i++) {
-            calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + '</div>'
+            calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + "</div>";
         }
 
         // 오늘 날짜 표기
         if (today.getMonth() == currentMonth) {
             todayDate = today.getDate();
-            var currentMonthDate = document.querySelectorAll('.dates .current');
-            currentMonthDate[todayDate -1].classList.add('today');
+            var currentMonthDate = document.querySelectorAll(".dates .current");
+            currentMonthDate[todayDate - 1].classList.add("today");
         }
 
-        // ✅ 캘린더 바뀔 때마다 배열 셋팅 
+        // ✅ 캘린더 바뀔 때마다 배열 셋팅
         modalSetting();
     }
 
     // 이전달로 이동
-    $('.go-prev').on('click', function() {
+    $(".go-prev").on("click", function () {
         thisMonth = new Date(currentYear, currentMonth - 1, 1);
         renderCalender(thisMonth);
     });
 
     // 다음달로 이동
-    $('.go-next').on('click', function() {
+    $(".go-next").on("click", function () {
         thisMonth = new Date(currentYear, currentMonth + 1, 1);
-        renderCalender(thisMonth); 
+        renderCalender(thisMonth);
     });
 }

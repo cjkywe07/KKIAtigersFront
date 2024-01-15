@@ -66,7 +66,7 @@
     text-align: center;
     font-size: 15px;
     font-weight: 500;
-    
+
     max-width: 350px;
     min-width: 48px;
     word-wrap: break-word; /* 자동 줄바꿈 */
@@ -124,7 +124,7 @@
     border-left: 2px solid black;
     font-weight: 600;
     font-size: 15px;
-    
+
     &:hover {
         background-color: var(--yellow-btn-hover);
         cursor: pointer;
@@ -200,12 +200,12 @@
     background-repeat: no-repeat;
     background-size: 100%;
     border-radius: 5px;
-    
+
     border: 2px solid black;
     width: 160px;
     height: 140px;
     overflow: hidden;
-    
+
     &:nth-child(1) {
         top: 0px;
         background-image: url(../img/호걸이.png);

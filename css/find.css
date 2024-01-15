@@ -37,7 +37,7 @@
     height: 50px;
     text-align: center;
     line-height: 50px;
-    
+
     &:first-of-type {
         background-color: rgb(222, 222, 222);
     }
@@ -58,7 +58,7 @@
     padding: 0 18px;
     color: #eb6780;
 
-    &:focus{
+    &:focus {
         outline: none;
     }
 
@@ -72,7 +72,7 @@
     color: rgb(214, 147, 2);
     font-weight: 500;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
         background-color: rgb(255, 234, 129);
     }
@@ -82,7 +82,7 @@ form[name="find-pw"] {
     display: none;
 }
 
-.error-msg { 
+.error-msg {
     background-color: rgb(227, 227, 227);
     font-weight: 500;
     width: 350px;
@@ -95,15 +95,17 @@ form[name="find-pw"] {
 }
 
 .login-valid {
-    animation: slide 3s cubic-bezier(0,1,0,1);
+    animation: slide 3s cubic-bezier(0, 1, 0, 1);
 }
 
 @keyframes slide {
     from {
         top: -70px;
-    } 50% {
+    }
+    50% {
         top: 0px;
-    } to {
+    }
+    to {
         top: -70px;
     }
 }

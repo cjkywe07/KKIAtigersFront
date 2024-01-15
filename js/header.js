@@ -4,10 +4,10 @@ const setMenuArr = ["game.html", "market.html", "community.html"]; // intellij -
 // 어느 페이지
 let link = document.location.href;
 const linkArr = link.split("/");
-console.log(linkArr[3])
+console.log(linkArr[3]);
 
 setMenuArr.forEach((menu, index) => {
-    if(menu == linkArr[3]) {
+    if (menu == linkArr[3]) {
         $menuArr[index].classList.add("current-menu");
     }
-})
+});

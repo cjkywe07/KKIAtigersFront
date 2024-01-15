@@ -37,7 +37,7 @@
     text-align: center;
     border-right: 2px solid black;
     color: white;
-    
+
     &:last-of-type {
         border: none;
         background-color: var(--tiger-orange);
@@ -48,7 +48,7 @@
 /* calendar */
 
 .cal-wrap {
-    width:100%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -121,8 +121,8 @@
     font-weight: 700;
     text-align: center;
     border: 2px solid black;
-    border-width: 0 2px 2px 0; 
-    background-color: white;   
+    border-width: 0 2px 2px 0;
+    background-color: white;
 }
 
 .cal-wrap .cal-main .dates {

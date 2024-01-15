@@ -2,7 +2,7 @@
     width: 1200px;
     margin: 15px auto 50px;
 }
-.padding-line{
+.padding-line {
     border-bottom: 2px solid;
     padding: 20px 0;
 }
@@ -15,7 +15,7 @@
     width: 50px;
     border-radius: 50%;
 }
-#nickname{
+#nickname {
     font-size: 20px;
     font-weight: 500;
 }
@@ -24,18 +24,18 @@
 
 #write-info > :nth-child(1) {
     width: 43%;
-    border-right: 2px solid ;
+    border-right: 2px solid;
 }
 #write-info > :nth-child(2) {
     width: 43%;
     margin-left: 35px;
-    border-right: 2px solid ;
+    border-right: 2px solid;
 }
 #write-info > :nth-child(3) {
     width: 14%;
     margin-left: 35px;
 }
-#write-info > input{
+#write-info > input {
     font-size: 30px;
     font-weight: 600;
     border: none;
@@ -70,7 +70,7 @@
     width: 100%;
     height: 400px;
     resize: none;
-    border: 2px solid ;
+    border: 2px solid;
     border-radius: 5px;
     outline: none;
     padding: 10px;
@@ -91,7 +91,7 @@
     flex-direction: column;
     position: relative;
 }
-.picture-btn{
+.picture-btn {
     border: 1.5px solid rgb(230, 230, 230);
     border-radius: 5px;
     padding: 5px 7px;
@@ -99,7 +99,7 @@
     width: 80px;
     font-size: 15px;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
     }
 }
