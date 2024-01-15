@@ -1,0 +1,35 @@
+#foodDetail-wrap {
+    width: 1200px;
+    margin: 15px auto 50px;
+}
+
+#detail-header-wrap {
+    justify-content: space-between;
+    padding-bottom: 25px;
+    border-bottom: 2px solid;
+}
+#writer-wrap {
+    align-items: center;
+    column-gap: 10px;
+}
+#writer-wrap > .writer-pic {
+    width: 55px;
+    border-radius: 50%;
+}
+#writer-wrap > .writer-nickname {
+    width: auto;
+    font-size: 20px;
+}
+
+#num-wrap {
+    column-gap: 25px;
+}
+#num-wrap > div {
+    column-gap: 10px;
+}
+
+/* ------------------------------------------------------------ */
+
+#detail-content-wrap{
+    padding-top: 25px;
+}

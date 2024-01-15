@@ -1,10 +1,11 @@
 #marketWrite-wrap {
-    width: 1300px;
+    width: 1200px;
     margin: 15px auto 50px;
 }
 .padding-line{
     /* border-bottom: 1.5px solid #c5c5c5; */
-    border-bottom: 1.5px solid rgb(230, 230, 230);
+    /* border-bottom: 1.5px solid rgb(230, 230, 230); */
+    border-bottom: 2px solid;
     padding: 20px 0;
 }
 #writer-wrap {
@@ -16,19 +17,24 @@
     width: 40px;
     border-radius: 50%;
 }
+#nickname{
+    font-weight: 500;
+}
 
 /* ------------------------------------------------------------ */
 
 #write-info > :nth-child(1) {
     width: 14%;
     /* border-right: 1.5px solid #c5c5c5; */
-    border-right: 1.5px solid rgb(230, 230, 230);
+    /* border-right: 1.5px solid rgb(230, 230, 230); */
+    border-right: 2px solid ;
 }
 #write-info > :nth-child(2) {
     width: 68%;
     margin-left: 30px;
     /* border-right: 1.5px solid #c5c5c5; */
-    border-right: 1.5px solid rgb(230, 230, 230);
+    /* border-right: 1.5px solid rgb(230, 230, 230); */
+    border-right: 2px solid ;
 }
 #write-info > :nth-child(3) {
     width: 12%;
@@ -70,11 +76,12 @@
     height: 400px;
     resize: none;
     /* border: 1.5px solid #c5c5c5; */
-    border: 1.5px solid rgb(230, 230, 230);
+    /* border: 1.5px solid rgb(230, 230, 230); */
+    border: 2px solid ;
     border-radius: 5px;
     outline: none;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
 }
 #content::placeholder {
@@ -114,6 +121,7 @@
     padding: 7px 10px;
     border-radius: 5px;
     font-size: 15px;
+    font-weight: 500;
 }
 
 /* ------------------------------------------------------------ */

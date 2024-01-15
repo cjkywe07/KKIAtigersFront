@@ -1,5 +1,5 @@
 #marketList-wrap {
-    width: 1300px;
+    width: 1200px;
     margin: 15px auto 50px;
 }
 button {
@@ -98,9 +98,8 @@ button {
     row-gap: 40px;
 }
 .list-content > a {
-    width: 298px;
-    height: 380px;
-    display: flex;
+    width: 273px;
+    height: 397px;
     flex-direction: column;
     align-items: center;
     row-gap: 8px;
@@ -122,8 +121,8 @@ button {
 }
 .product-img {
     width: 100%;
-    height: 250px;
-    margin-bottom: 12px;
+    height: 270px;
+    margin-bottom: 10px;
     border-radius: 9px 9px 0 0;
 }
 

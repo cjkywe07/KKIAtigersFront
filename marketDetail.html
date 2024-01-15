@@ -14,7 +14,7 @@
         <header>
             <div class="display-flex-set">
                 <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
-                <a class="header-menu">GAMES</a>
+                <a class="header-menu">GAME</a>
                 <a class="header-menu">MARKET</a>
                 <a class="header-menu">COMMUNITY</a>
             </div>
@@ -28,10 +28,36 @@
             <div id="content-wrap" class="display-flex">
                 <img id="product-img" src="./img/goods.jpg" />
 
-                <div id="txt-wrap" class="display-flex">
-                    <div id="product-title">굿즈</div>
-                    <div id="product-price">50,000원</div>
-                    <div id="product-region">전국</div>
+                <div id="detail-wrap" class="display-flex">
+                    <div id="detail-header-wrap" class="display-flex-set">
+                        <div id="writer-wrap" class="display-flex">
+                            <img class="writer-pic" src="./img/핑구1.jpg" />
+                            <div class="writer-nickname">어우기</div>
+                        </div>
+
+                        <div id="num-wrap" class="display-flex">
+                            <div class="display-flex-set">
+                                <div>조회수</div>
+                                <div>13</div>
+                            </div>
+                            <div class="display-flex-set">
+                                <div>작성일</div>
+                                <div>2023.12.05</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="txt-wrap" class="display-flex">
+                        <div class="display-flex-set">
+                            <div id="product-title">굿즈</div>
+                            <div id="product-price">50,000원</div>
+                        </div>
+                        <div class="display-flex-set">
+                            <img src="./img/place.png" height="30px" />
+                            <div id="product-region">광주광역시 북구</div>
+                        </div>
+                    </div>
+
                     <div id="product-content">챔필 앞에서 직거래 원합니다</div>
                 </div>
             </div>
@@ -45,7 +71,51 @@
                 <a href="">목록</a>
             </div>
 
-            <div id="comment-wrap"></div>
+            <div id="comment-wrap">
+                <div id="comment-content-wrap">
+                    <form action="" autocomplete="off" class="comment-content display-flex">
+                        <input type="hidden" name="id" />
+                        <img class="writer-pic" src="./img/핑구1.jpg" />
+                        <div class="writer-nickname">어우기</div>
+                        <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
+                        <div class="write-time">23.12.05</div>
+                        <input type="button" class="comment-delete-btn" value="삭제" />
+                    </form>
+                    <form action="" autocomplete="off" class="comment-content display-flex">
+                        <input type="hidden" name="id" />
+                        <img class="writer-pic" src="./img/핑구1.jpg" />
+                        <div class="writer-nickname">어우기</div>
+                        <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
+                        <div class="write-time">23.12.05</div>
+                        <input type="button" class="comment-delete-btn" value="삭제" />
+                    </form>
+                    <form action="" autocomplete="off" class="comment-content display-flex">
+                        <input type="hidden" name="id" />
+                        <img class="writer-pic" src="./img/핑구1.jpg" />
+                        <div class="writer-nickname">어우기</div>
+                        <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
+                        <div class="write-time">23.12.05</div>
+                        <input type="button" class="comment-delete-btn" value="삭제" />
+                    </form>
+                    <form action="" autocomplete="off" class="comment-content display-flex">
+                        <input type="hidden" name="id" />
+                        <img class="writer-pic" src="./img/핑구1.jpg" />
+                        <div class="writer-nickname">어우기</div>
+                        <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
+                        <div class="write-time">23.12.05</div>
+                        <input type="button" class="comment-delete-btn" value="삭제" />
+                    </form>
+                </div>
+
+                <form action="" id="comment-write-wrap" class="comment-content display-flex">
+                    <input type="hidden" name="marketId" />
+                    <input type="hidden" name="userId" />
+                    <img class="writer-pic" src="./img/핑구1.jpg" />
+                    <div class="writer-nickname">바삭한 감자전</div>
+                    <input class="comment-input" type="text" placeholder="댓글을 입력하세요" />
+                    <button type="button" class="comment-write-btn">작성</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>
