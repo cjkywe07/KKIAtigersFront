@@ -106,16 +106,16 @@
 }
 
 .cal-wrap .cal-main .cal-days .day {
-    height: 55px;
-    line-height: 55px;
+    height: 45px;
+    line-height: 45px;
     border-top: 2px solid black;
 }
 
 .cal-wrap .cal-main .day {
     width: calc(100% / 7);
     height: 160px;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     text-align: center;
     border: 2px solid black;
     border-width: 0 2px 2px 0;    

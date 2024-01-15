@@ -7,7 +7,7 @@
 
 /* today -------------------------------*/
 #main-today {
-    width: 828px;
+    width: 830px;
     padding-top: 50px;
     border: 2px solid ;
     border-radius: 5px;
@@ -27,11 +27,11 @@
 }
 
 #main-today-opponent, #main-today-entry {
-    width: 778px;
-    height: 120px;
+    width: 787px;
+    height: 125px;
     border: 2px solid black;
     border-radius: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 #main-today-opponent > li {
@@ -56,12 +56,12 @@
 
 #main-today-place {
     column-gap: 23px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .place-content {
-    width: 515px;
-    height: 300px;
+    width: 524px;
+    height: 306px;
 
     border:2px solid black;
     border-radius: 5px;
@@ -144,13 +144,13 @@
 /* news -------------------------------*/
 #main-news {
     width: 350px;
-    height: 242px;
+    height: 247px;
     border: 2px solid ;
     border-radius: 5px;
     
     flex-direction: column;
     position: absolute;
-    top: 462px;
+    top: 457px;
     right: 0px;
 }
 
@@ -162,7 +162,7 @@
 }
 
 #main-news-content {
-    background-color: lightgray;
+    background-color: #eaeaea;
     width: 310px;
     height: 145px;
     border-radius: 5px;
