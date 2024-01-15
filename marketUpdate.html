@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/marketWrite.css" />
         <!-- <script defer src="./js/marketWrite.js"></script> -->
-        <title>마켓 작성</title>
+        <title>마켓 수정</title>
     </head>
     <body>
         <header>
@@ -24,7 +24,7 @@
             </div>
         </header>
 
-        <!-- 지역 선택창 만들어야 하는데 전국 행정구역으로 할까요?? -->
+        <!-- marketWrite 수정되면 marketUpdate 도 수정하기 -->
         <div id="marketWrite-wrap">
             <div id="writer-wrap" class="display-flex padding-line">
                 <img src="./img/핑구1.jpg" />
@@ -34,9 +34,9 @@
             <form name="write-form" action="" autocomplete="off">
                 <div id="write-info-wrap">
                     <div id="write-info" class="padding-line display-flex">
-                        <input type="text" id="region" placeholder="지역선택" name="region" />
-                        <input type="text" id="productName" placeholder="상품명" name="productName" />
-                        <input type="text" id="price" placeholder="가격" name="price" />
+                        <input type="text" id="region" placeholder="지역선택" name="region" value="광주광역시 북구" />
+                        <input type="text" id="price" placeholder="상품명" name="price" value="굿즈" />
+                        <input type="text" id="productName" placeholder="가격" name="productName" value="300000" />
                     </div>
 
                     <div class="err-wrap display-flex">
@@ -53,7 +53,8 @@
                 </div>
 
                 <div id="write-content-wrap" class="padding-line">
-                    <textarea id="content" name="content" placeholder="내용을 입력해 주세요"></textarea>
+                    <textarea id="content" name="content" placeholder="내용을 입력해 주세요">
+챔필 앞에서 직거래 원합니다</textarea>
                     <p class="err-msg">내용을 입력해 주세요</p>
                 </div>
 

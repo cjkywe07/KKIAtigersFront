@@ -14,9 +14,9 @@
         <header>
             <div class="display-flex-set">
                 <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
-                <a class="header-menu">GAME</a>
-                <a class="header-menu">MARKET</a>
-                <a class="header-menu">COMMUNITY</a>
+                <a href="./game.html" class="header-menu">GAME</a>
+                <a href="./marketList.html" class="header-menu">MARKET</a>
+                <a href="./community.html" class="header-menu">COMMUNITY</a>
             </div>
             <div class="display-flex-set">
                 <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
@@ -24,6 +24,7 @@
             </div>
         </header>
 
+        <!-- 상품명, 가격 위치 애매해...! -->
         <div id="marketDetail-wrap">
             <div id="content-wrap" class="display-flex">
                 <img id="product-img" src="./img/goods.jpg" />
@@ -42,19 +43,19 @@
                             </div>
                             <div class="display-flex-set">
                                 <div>작성일</div>
-                                <div>2023.12.05</div>
+                                <div>2023-12-05</div>
                             </div>
                         </div>
                     </div>
 
-                    <div id="txt-wrap" class="display-flex">
-                        <div class="display-flex-set">
-                            <div id="product-title">굿즈</div>
-                            <div id="product-price">50,000원</div>
-                        </div>
-                        <div class="display-flex-set">
+                    <div id="txt-content-wrap" class="display-flex">
+                        <div class="txt-wrap display-flex-set">
                             <img src="./img/place.png" height="30px" />
                             <div id="product-region">광주광역시 북구</div>
+                        </div>
+                        <div class="txt-wrap display-flex-set">
+                            <div id="product-title">굿즈</div>
+                            <div id="product-price">50,000원</div>
                         </div>
                     </div>
 
@@ -63,12 +64,12 @@
             </div>
 
             <div id="btn-wrap" class="display-flex">
-                <a href="">작성</a>
-                <a href="">수정</a>
+                <a href="./marketWrite.html">작성</a>
+                <a href="./marketUpdate.html">수정</a>
                 <form action="">
                     <button type="button">삭제</button>
                 </form>
-                <a href="">목록</a>
+                <a href="./marketList.html">목록</a>
             </div>
 
             <div id="comment-wrap">
@@ -78,7 +79,7 @@
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">어우기</div>
                         <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
-                        <div class="write-time">23.12.05</div>
+                        <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
                     <form action="" autocomplete="off" class="comment-content display-flex">
@@ -86,7 +87,7 @@
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">어우기</div>
                         <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
-                        <div class="write-time">23.12.05</div>
+                        <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
                     <form action="" autocomplete="off" class="comment-content display-flex">
@@ -94,7 +95,7 @@
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">어우기</div>
                         <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
-                        <div class="write-time">23.12.05</div>
+                        <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
                     <form action="" autocomplete="off" class="comment-content display-flex">
@@ -102,7 +103,7 @@
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">어우기</div>
                         <div class="write-content">1번 옷 거래하고 싶습니다 ~</div>
-                        <div class="write-time">23.12.05</div>
+                        <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
                 </div>

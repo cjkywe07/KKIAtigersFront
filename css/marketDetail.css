@@ -4,7 +4,7 @@
 }
 #content-wrap {
     align-items: center;
-    column-gap: 50px;
+    column-gap: 30px;
 }
 #product-img {
     width: 500px;
@@ -12,10 +12,9 @@
 }
 
 #detail-wrap {
-    height: 500px;
+    height: 495px;
     flex-direction: column;
     justify-content: space-between;
-    row-gap: 30px;
 }
 #detail-header-wrap {
     justify-content: space-between;
@@ -27,11 +26,12 @@
     column-gap: 10px;
 }
 #writer-wrap > .writer-pic {
-    width: 55px;
+    width: 50px;
 }
 #writer-wrap > .writer-nickname {
     width: auto;
     font-size: 20px;
+    font-weight: 500;
 }
 
 #num-wrap {
@@ -43,21 +43,22 @@
 
 /* ------------------------------------------------------------ */
 
-#txt-wrap {
+#txt-content-wrap {
     justify-content: space-between;
 }
-#txt-wrap > * {
+#txt-content-wrap > * {
     font-size: 30px;
     font-weight: 600;
 }
-#txt-wrap > div:first-child {
-    column-gap: 30px;
-}
-#txt-wrap > div:last-child {
+.txt-wrap:first-child {
     column-gap: 5px;
 }
+.txt-wrap:last-child {
+    column-gap: 30px;
+}
+
 #product-content {
-    width: 650px;
+    width: 670px;
     height: 300px;
     font-size: 20px;
     padding: 10px 13px;
@@ -69,6 +70,8 @@
         display: none;
     }
 }
+
+/* ------------------------------------------------------------ */
 
 #btn-wrap {
     margin-top: 25px;
@@ -111,15 +114,10 @@
     border-radius: 50%;
 }
 .writer-nickname {
-    width: 230px;
+    width: 209px;
 }
-
-.write-content {
-    /* 삭제 버튼 있을 때 */
-    /* width: 820px; */
-
-    /* 삭제 버튼 없을 때 */
-    width: 895px;
+.write-time{
+    margin-left: auto;
 }
 .comment-delete-btn {
     padding: 0 12px;
@@ -152,6 +150,9 @@
 }
 .comment-input:focus {
     border: 2px solid rgb(255, 215, 83);
+}
+.comment-input::placeholder {
+    color: rgb(190, 190, 190);
 }
 .comment-write-btn {
     padding: 0 12px;

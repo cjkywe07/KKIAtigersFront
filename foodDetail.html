@@ -14,9 +14,9 @@
         <header>
             <div class="display-flex-set">
                 <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
-                <a class="header-menu">GAME</a>
-                <a class="header-menu">MARKET</a>
-                <a class="header-menu">COMMUNITY</a>
+                <a href="./game.html" class="header-menu">GAME</a>
+                <a href="./marketList.html" class="header-menu">MARKET</a>
+                <a href="./community.html" class="header-menu">COMMUNITY</a>
             </div>
             <div class="display-flex-set">
                 <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
@@ -24,6 +24,8 @@
             </div>
         </header>
 
+        <!-- 디자인... 내가 하니까 뭔가 구려... 헲미 지혜님
+            그리고 댓글은 계획상 마켓, 자유 게시판에만 들어가는데 여기 없으니까 허전해요... 넣어야 할까요?? -->
         <div id="foodDetail-wrap">
             <div id="detail-wrap">
                 <div id="detail-header-wrap" class="display-flex-set">
@@ -43,42 +45,48 @@
                         </div>
                         <div class="display-flex-set">
                             <div>작성일</div>
-                            <div>2023.12.05</div>
+                            <div>2023-12-05</div>
                         </div>
                     </div>
                 </div>
 
-                <div id="detail-content-wrap">
-                    <img id="product-img" src="./img/goods.jpg" />
+                <div id="detail-content-wrap" class="display-flex">
+                    <div id="map">지도</div>
 
-                    <div id="txt-wrap">
-                        <div>
-                            <div>제목</div>
-                            <div>광주 찐맛집 추천</div>
+                    <div id="txt-content-wrap" class="display-flex">
+                        <div class="txt-wrap">
+                            <div class="txt-title">제목</div>
+                            <div class="txt-content">광주 찐맛집 추천</div>
                         </div>
-                        <div>
-                            <div>가게 이름</div>
-                            <div>준식당</div>
+                        <div class="display-flex">
+                            <div class="txt-wrap-middle">
+                                <div class="txt-title">식당 이름</div>
+                                <div class="txt-content">준식당</div>
+                            </div>
+                            <div class="txt-wrap-middle">
+                                <div class="txt-title">지역</div>
+                                <div class="txt-content">광주</div>
+                            </div>
                         </div>
-                        <div>
-                            <div">소개</div>
-                            <div>
-                                로컬식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다.
+                        <div class="txt-wrap">
+                            <div class="txt-title">소개</div>
+                            <div class="txt-content" id="info">
+                                로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
+                                추천합니다!
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- <div id="btn-wrap" class="display-flex">
-            <a href="">작성</a>
-            <a href="">수정</a>
-            <form action="">
-                <button type="button">삭제</button>
-            </form>
-            <a href="">목록</a>
-        </div> -->
+            <div id="btn-wrap" class="display-flex">
+                <a href="./foodWrite.html">작성</a>
+                <a href="./foodUpdate.html">수정</a>
+                <form action="">
+                    <button type="button">삭제</button>
+                </form>
+                <a href="./foodList.html">목록</a>
+            </div>
         </div>
     </body>
 </html>

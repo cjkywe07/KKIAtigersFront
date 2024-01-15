@@ -61,7 +61,10 @@
     position: relative;
 }
 .list-content > a {
+    /* 2열 배열 */
     width: 582px;
+    /* 3열 배열 */
+    /* width: 376px; */
     height: 110px;
     justify-content: flex-start;
     column-gap: 50px;

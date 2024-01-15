@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/game.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script defer src="./js/header.js"></script>
-    <script defer src="./js/game.js"></script>
-    <title>games</title>
-</head>
-<body>
-    <header>
-        <div class="display-flex-set">
-            <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
-            <a href="./game.html" class="header-menu">GAME</a>
-            <a class="header-menu">MARKET</a>
-            <a href="./community.html" class="header-menu">COMMUNITY</a>
-        </div>
-        <div class="display-flex-set">
-            <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
-            <a id="login-btn" href="./login.html">LOGIN</a>
-            <!-- intelliJ : login/logout 텍스트만 바꾸기 -->
-        </div>
-    </header>
-    <div id="game-wrapper" class="display-flex">
-        <div class="cal-wrap display-flex">
-            <div id="game-banner" class="display-flex">
-                <div id="game-banner-title">기아 타이거즈 공식 일정</div>
-                <div id="game-banner-content" class="display-flex">
-                    <div>승률</div>
-                    <div>0.666</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/game.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script defer src="./js/header.js"></script>
+        <script defer src="./js/game.js"></script>
+        <title>games</title>
+    </head>
+    <body>
+        <header>
+            <div class="display-flex-set">
+                <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
+                <a href="./game.html" class="header-menu">GAME</a>
+                <a href="./marketList.html" class="header-menu">MARKET</a>
+                <a href="./community.html" class="header-menu">COMMUNITY</a>
+            </div>
+            <div class="display-flex-set">
+                <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
+                <a id="login-btn" href="./login.html">LOGIN</a>
+                <!-- intelliJ : login/logout 텍스트만 바꾸기 -->
+            </div>
+        </header>
+
+        <div id="game-wrapper" class="display-flex">
+            <div class="cal-wrap display-flex">
+                <div id="game-banner" class="display-flex">
+                    <div id="game-banner-title">기아 타이거즈 공식 일정</div>
+                    <div id="game-banner-content" class="display-flex">
+                        <div>승률</div>
+                        <div>0.666</div>
+                    </div>
+                </div>
+
+                <div class="cal-nav display-flex-set">
+                    <a href="javascript:;" class="nav-btn go-prev"></a>
+                    <div class="year-month"></div>
+                    <a href="javascript:;" class="nav-btn go-next"></a>
+                </div>
+                
+                <div class="cal-main">
+                    <div class="cal-days display-flex">
+                        <div class="day">MON</div>
+                        <div class="day">TUE</div>
+                        <div class="day">WED</div>
+                        <div class="day">THU</div>
+                        <div class="day">FRI</div>
+                        <div class="day">SAT</div>
+                        <div class="day">SUN</div>
+                    </div>
+                    <div class="dates"></div>
                 </div>
             </div>
-            <div class="cal-nav display-flex-set">
-                <a href="javascript:;" class="nav-btn go-prev"></a>
-                <div class="year-month"></div>
-                <a href="javascript:;" class="nav-btn go-next"></a>
-            </div>
-            <div class="cal-main">
-                <div class="cal-days display-flex">
-                    <div class="day">MON</div>
-                    <div class="day">TUE</div>
-                    <div class="day">WED</div>
-                    <div class="day">THU</div>
-                    <div class="day">FRI</div>
-                    <div class="day">SAT</div>
-                    <div class="day">SUN</div>
-                </div>
-                <div class="dates"></div>
-            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
