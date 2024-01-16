@@ -1,5 +1,5 @@
 #main-wrapper {
-    height: calc(100vh - 135px);
+    height: 750px;
     width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -28,7 +28,7 @@
 #main-today-entry {
     width: 787px;
     height: 150px;
-    border: 2px solid black;
+    border: 2px solid ;
     border-radius: 5px;
     margin-bottom: 20px;
 }
@@ -46,7 +46,7 @@
 #main-today-entry > li {
     width: 78px;
     text-align: center;
-    border-right: 2px solid black;
+    border-right: 2px solid ;
 
     &:last-of-type {
         border: none;
@@ -61,7 +61,7 @@
     width: 524px;
     height: 330px;
 
-    border: 2px solid black;
+    border: 2px solid;
     border-radius: 5px;
 
     &:last-of-type {
@@ -132,7 +132,7 @@
 #slide-btn-wrap > li {
     width: 15px;
     height: 15px;
-    border: 2px solid black;
+    border: 2px solid ;
     border-radius: 50%;
 }
 

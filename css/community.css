@@ -1,6 +1,6 @@
 /* 채팅 --------------------------------------------------------------- */
 #community-home-wrapper {
-    height: calc(100vh - 135px);
+    height: 750px;
     width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -9,7 +9,7 @@
 .community-home-content {
     width: calc(1160px / 3);
     height: 350px;
-    border: 2px solid black;
+    border: 2px solid ;
     border-radius: 5px;
 
     overflow: hidden;
@@ -60,7 +60,7 @@
 
 .chatting-items .chatting-content {
     background-color: white;
-    border: 2px solid black;
+    border: 2px solid ;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
@@ -98,7 +98,7 @@
     width: 350px;
     height: 50px;
     background-color: white;
-    border: 2px solid black;
+    border: 2px solid ;
     border-radius: 5px;
     position: absolute;
     justify-content: space-between;
@@ -121,7 +121,7 @@
     background-color: var(--yellow-btn);
     border: none;
     width: 60px;
-    border-left: 2px solid black;
+    border-left: 2px solid ;
     font-weight: 600;
     font-size: 15px;
 
@@ -256,7 +256,7 @@
 #chatting-live {
     padding: 7px 10px;
     font-weight: 600;
-    border: 2px solid black;
+    border: 2px solid #333;
     border-width: 0px 2px 2px 2px;
     border-radius: 0 0 5px 5px;
     color: white;

@@ -3,46 +3,43 @@
     height: 1020px;
     margin: 0 auto;
     position: relative;
+    flex-direction: column;
 }
 
 /* title */
 #game-banner {
-    width: 1156px;
+    width: 100%;
+    height: 120px;
+    line-height: 120px;
+    border-bottom: 2px solid;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
     font-weight: 600;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    justify-content: space-between;
+}
+
+#cal-banner {
+    width: 1156px;
     position: absolute;
-    top: 44px;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 15px;
+    top: 223px;
 }
 
-#game-banner > div {
-    height: 50px;
-    line-height: 48px;
-    border: 2px solid black;
+#cal-color, #win-graph {
+    justify-content: space-between;
     border-radius: 5px;
-    background-color: navy;
-    color: white;
-    font-size: 18px;
-    overflow: hidden;
     text-align: center;
 }
 
-#game-banner-title {
-    padding: 0 15px;
+#cal-color {
+    column-gap: 5px;
 }
 
-#game-banner-content > div {
-    width: 100px;
-    text-align: center;
-    border-right: 2px solid black;
-    color: white;
-
-    &:last-of-type {
-        border: none;
-        background-color: var(--tiger-orange);
-        color: white;
-    }
+#win-graph > div {
+    font-size: 17px;
+    color: var(--kia-red);
 }
 
 /* calendar */
@@ -52,21 +49,20 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    border: 2px solid black;
+    border: 2px solid;
     border-radius: 5px;
-    padding: 30px 20px 20px 20px;
-    background-color: #eff6ff;
+    padding: 20px;
 }
 
 .cal-wrap .cal-nav {
+    height: 100px;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 78px;
-    margin-bottom: 30px;
+    font-size: 33px;
+    margin: 20px 0 0;
 }
 
 .cal-wrap .cal-nav .year-month {
-    width: 300px;
+    width: 150px;
     text-align: center;
     line-height: 1;
 }
@@ -75,7 +71,6 @@
 .cal-wrap .cal-nav .go-next {
     display: block;
     width: 50px;
-    height: 78px;
     font-size: 0;
     display: flex;
     justify-content: center;
@@ -86,11 +81,10 @@
 .cal-wrap .cal-nav .go-next::before {
     content: "";
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border: 3px solid #000;
     border-width: 3px 3px 0 0; /* border-with : 부분 border */
-    transition: border 0.1s;
 }
 
 .cal-wrap .cal-nav .go-prev::before {
@@ -105,13 +99,13 @@
     width: 100%;
     position: relative;
     margin: 0 auto;
-    border-left: 2px solid black;
+    border-left: 2px solid ;
 }
 
 .cal-wrap .cal-main .cal-days .day {
     height: 45px;
     line-height: 45px;
-    border-top: 2px solid black;
+    border-top: 2px solid #333;
 }
 
 .cal-wrap .cal-main .day {
@@ -120,15 +114,15 @@
     font-size: 17px;
     font-weight: 700;
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid #333;
     border-width: 0 2px 2px 0;
-    background-color: white;
 }
 
 .cal-wrap .cal-main .dates {
     display: flex;
     flex-flow: wrap;
     width: 100%;
+    background-color: #eff6ff;
 }
 
 .cal-wrap .cal-main .dates .day > span {
