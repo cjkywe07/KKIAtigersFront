@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script defer src="./js/favoriteDetail.js"></script>
+        <link rel="stylesheet" href="./css/favoriteDetail.css" />
+        <title>최애 자랑 게시판 상세</title>
+    </head>
+    <body>
+        <header>
+            <div class="display-flex-set">
+                <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
+                <a href="./game.html" class="header-menu">GAME</a>
+                <a href="./marketList.html" class="header-menu">MARKET</a>
+                <a href="./community.html" class="header-menu">COMMUNITY</a>
+            </div>
+            <div class="display-flex-set">
+                <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
+                <a id="login-btn" href="./login.html">LOGIN</a>
+            </div>
+        </header>
+
+        <div id="favoriteDetail-wrap">
+            <div id="detail-wrap">
+                <div id="detail-header-wrap" class="display-flex-set padding-line">
+                    <div id="writer-wrap" class="display-flex">
+                        <img class="writer-pic" src="./img/핑구1.jpg" />
+                        <div class="writer-nickname">어우기</div>
+                    </div>
+
+                    <div id="num-wrap" class="display-flex">
+                        <div class="display-flex-set">
+                            <div>좋아요수</div>
+                            <div>13</div>
+                        </div>
+                        <div class="display-flex-set">
+                            <div>조회수</div>
+                            <div>13</div>
+                        </div>
+                        <div class="display-flex-set">
+                            <div>작성일</div>
+                            <div>2023-12-05</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="detail-content-wrap" class="display-flex-set padding-line">
+                    <div id="title">너무 잘생겼어요</div>
+                    <div id="palyer-info-wrap" class="display-flex">
+                        <div id="position">투수 / 좌투좌타</div>
+                        <div id="num-name-wrap" class="display-flex">
+                            <div id="num">54</div>
+                            <div id="name">양현종</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper padding-line">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/player.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="btn-wrap" class="display-flex">
+            <a href="./foodWrite.html">작성</a>
+            <a href="./foodUpdate.html">수정</a>
+            <form action="">
+                <button type="button">삭제</button>
+            </form>
+            <a href="./foodList.html">목록</a>
+        </div> -->
+    </body>
+</html>

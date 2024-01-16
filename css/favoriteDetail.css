@@ -1,0 +1,115 @@
+#favoriteDetail-wrap {
+    width: 1200px;
+    margin: 15px auto 50px;
+    /* overflow: hidden; */
+}
+.padding-line {
+    border-bottom: 2px solid;
+    padding: 20px 0;
+}
+
+#detail-header-wrap {
+    justify-content: space-between;
+    padding-top: 0;
+}
+#writer-wrap {
+    align-items: center;
+    column-gap: 10px;
+}
+#writer-wrap > .writer-pic {
+    width: 50px;
+    border-radius: 50%;
+}
+#writer-wrap > .writer-nickname {
+    width: auto;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#num-wrap {
+    column-gap: 25px;
+}
+#num-wrap > div {
+    column-gap: 10px;
+}
+
+/* ------------------------------------------------------------ */
+
+#detail-content-wrap {
+    justify-content: space-between;
+}
+#detail-content-wrap > * {
+    font-size: 30px;
+}
+#palyer-info-wrap {
+    flex-direction: column;
+    align-items: end;
+}
+#position {
+    font-size: 18px;
+}
+#num-name-wrap {
+    column-gap: 10px;
+}
+#num {
+    color: #ea0029;
+}
+
+/* ------------------------------------------------------------ */
+
+.swiper {
+    /* margin-bottom: 80px; */
+    padding-left: 55px;
+    padding-right: 55px;
+    background-color: #eee;
+}
+.swiper-wrapper {
+    /* position: relative; */
+    /* width: 100%; */
+    /* height: 100%; */
+    display: flex;
+    /* margin: 0 auto; */
+}
+.swiper-slide {
+    /* width: 275px; */
+    /* margin-right: 10px; */
+    text-align: center;
+    /* position: relative; */
+    /* flex-shrink: 0; */
+    display: flex;
+    align-items: center;
+}
+.swiper-slide > img {
+    width: 240px;
+}
+.swiper-button-prev {
+    color: transparent;
+    background: url(../img/slidePrevArrow.png) no-repeat center / 27px 44px;
+}
+.swiper-button-next {
+    color: transparent;
+    background: url(../img/slideNextArrow.png) no-repeat center / 27px 44px;
+}
+
+/* ------------------------------------------------------------ */
+
+#btn-wrap {
+    padding-top: 20px;
+    column-gap: 10px;
+}
+#btn-wrap > a,
+#btn-wrap button {
+    display: inline-block;
+    padding: 0 12px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 38px;
+    cursor: pointer;
+    background-color: var(--yellow-btn);
+
+    &:hover {
+        background-color: var(--yellow-btn-hover);
+    }
+}

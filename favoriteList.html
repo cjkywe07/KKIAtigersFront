@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/favoriteList.css" />
+        <!-- <script defer src="./js/favoriteList.js"></script> -->
+        <title>최애 자랑 게시판 리스트</title>
+    </head>
+    <body>
+        <header>
+            <div class="display-flex-set">
+                <a href="./main.html"><img src="./img/KKIA2-removebg.png" id="logo" /></a>
+                <a href="./game.html" class="header-menu">GAME</a>
+                <a href="./marketList.html" class="header-menu">MARKET</a>
+                <a href="./community.html" class="header-menu">COMMUNITY</a>
+            </div>
+            <div class="display-flex-set">
+                <a href="./mypage.html"><img class="header-mypage" src="./img/tiger.png" /></a>
+                <a id="login-btn" href="./login.html">LOGIN</a>
+            </div>
+        </header>
+
+        <div id="favoriteList-wrap">
+            <div id="header-txt">최애 자랑 게시판</div>
+
+            <div id="list-wrap" class="display-flex">
+                <div class="list-content">
+                    <a href="">
+                        <img class="favorite-img" src="./img/player.jpg" />
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="favorite-img" src="./img/player.jpg" />
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="favorite-img" src="./img/player.jpg" />
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="favorite-img" src="./img/player.jpg" />
+                    </a>
+                </div>
+                <div class="list-content">
+                    <a href="">
+                        <img class="favorite-img" src="./img/player.jpg" />
+                    </a>
+                </div>
+            </div>
+
+            <div id="pagination-wrap" class="display-flex-set">
+                <ul id="pagination-content" class="display-flex">
+                    <li>
+                        <a href=""><img src="./img/prevArrow.png" height="12px" /></a>
+                    </li>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li>
+                        <a href=""><img src="./img/nextArrow.png" height="12px" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
