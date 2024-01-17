@@ -31,6 +31,10 @@ main {
     border: none;
     font-size: 30px;
     font-weight: 600;
+
+    &:focus {
+        outline: none;
+    }
 }
 #write-info > :nth-child(1) {
     width: 43%;
@@ -44,9 +48,6 @@ main {
 #write-info > :nth-child(3) {
     width: 14%;
     margin-left: 20px;
-}
-#write-info > input {
-    outline: none;
 }
 #write-info input::placeholder {
     color: rgb(190, 190, 190);

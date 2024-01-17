@@ -27,19 +27,13 @@
 
         <!-- 지역 선택창 만들어야 하는데 전국 행정구역으로 할까요?? 네네 -->
         <div id="marketWrite-wrap">
-            <div id="writer-wrap" class="display-flex padding-line">
+            <div id="writer-wrap" class="display-flex">
                 <img src="./img/핑구1.jpg" />
                 <div id="nickname">어우기</div>
             </div>
 
             <form name="write-form" action="" autocomplete="off">
                 <div id="write-info-wrap">
-                    <div id="write-info" class="display-flex">
-                        <input type="text" id="productName" placeholder="상품명" name="productName" value="굿즈"/>
-                        <input type="text" id="region" placeholder="지역선택" name="region" value="광주광역시 북구"/>
-                        <input type="text" id="price" placeholder="가격" name="price" value="50000"/>
-                    </div>
-
                     <div class="err-wrap display-flex">
                         <div>
                             <p class="err-msg">지역을 입력해 주세요</p>
@@ -51,10 +45,18 @@
                             <p class="err-msg">가격을 입력해 주세요</p>
                         </div>
                     </div>
+
+                    <div id="write-info" class="display-flex">
+                        <input type="text" id="productName" placeholder="상품명" name="productName" value="굿즈" />
+                        <input type="text" id="region" placeholder="지역선택" name="region" value="광주광역시 북구" />
+                        <input type="text" id="price" placeholder="가격" name="price" value="50000" />
+                    </div>
                 </div>
 
-                <div id="write-content-wrap" class="padding-line">
-                    <textarea id="content" name="content" placeholder="내용을 입력해 주세요"></textarea>
+                <div id="write-content-wrap">
+                    <textarea id="content" name="content" placeholder="내용을 입력해 주세요" class="padding-line">
+챔필 앞에서 직거래 원합니다</textarea
+                    >
                     <p class="err-msg">내용을 입력해 주세요</p>
                 </div>
 

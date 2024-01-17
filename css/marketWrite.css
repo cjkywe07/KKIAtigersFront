@@ -14,7 +14,7 @@
 #writer-wrap {
     align-items: center;
     column-gap: 10px;
-    padding-top: 0;
+    padding-bottom: 20px;
 }
 #writer-wrap > img {
     width: 40px;
@@ -23,9 +23,6 @@
 
 /* ------------------------------------------------------------ */
 
-#write-info-wrap {
-    border-bottom: 2px solid;
-}
 #write-info-wrap input {
     padding: 20px 20px 20px 0;
     border: none;
@@ -35,6 +32,10 @@
     &:focus {
         outline: none;
     }
+}
+#write-info {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
 }
 #write-info > :nth-child(1) {
     width: 43%;
@@ -57,7 +58,7 @@
     column-gap: 20px;
 }
 .err-msg {
-    margin-top: 7px;
+    margin-bottom: 7px;
     font-size: 14px;
     color: red;
     display: none;
@@ -80,6 +81,7 @@
     resize: none;
     outline: none;
     border: none;
+    border-bottom: 2px solid;
     font-size: 18px;
     font-weight: 500;
     display: flex;
@@ -88,7 +90,7 @@
     color: rgb(190, 190, 190);
 }
 #write-content-wrap > p {
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 /* ------------------------------------------------------------ */
