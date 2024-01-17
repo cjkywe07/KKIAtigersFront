@@ -4,7 +4,7 @@
     border: 2px solid;
     border-radius: 5px;
     padding: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
 }
 .padding-line {
@@ -36,18 +36,19 @@
 #write-info {
     border-top: 2px solid;
     border-bottom: 2px solid;
+    height: 100px;
 }
 #write-info > :nth-child(1) {
     width: 43%;
     border-right: 2px solid;
 }
 #write-info > :nth-child(2) {
-    width: 43%;
+    width: 40%;
     margin-left: 20px;
     border-right: 2px solid;
 }
 #write-info > :nth-child(3) {
-    width: 14%;
+    width: 17%;
     margin-left: 20px;
 }
 #write-info input::placeholder {

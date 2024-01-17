@@ -1,36 +1,41 @@
-let i = 0;
-
-// 파일추가 버튼 누르면 파일선택 버튼 생성
-$("#add-btn").click(function () {
-    $("#fileBox-wrap").append(`
-            <div class="fileBox display-flex">
-                <label for="file${i}" class="picture-btn">파일 선택</label>
-                <input type="file" id="file${i}" class="player-pic" name="player${i}" accept="image/*" style="display: none" />
-                <div class="confirmBox" style="display: none"></div>
-                <button type="button" class="file-delete-btn" onclick="$(this).parent().remove()"></button>
-            </div>`);
-    i++;
-
-    const playerPics = document.querySelectorAll(".player-pic");
-    const confirms = document.querySelectorAll(".confirmBox");
-
-    console.log(playerPics);
-    console.log(confirms);
-
-    // 파일선택 버튼 누르면 파일 추가
-    playerPics.forEach((playerPic, idx) => {
-        console.log(idx, playerPic);
-
-        playerPic.onchange = () => {
-            console.log(idx, playerPic);
-
-            const splitPic = playerPic.value.split("");
-            const joinPic = splitPic.slice(12).join("");
-
-            confirms[idx].style.display = "block";
-            confirms[idx].innerText = joinPic;
-
-            console.log(confirms[idx]);
-        };
+$(function () {
+    var i = 0;
+    $(".picture-btn").click(function () {
+        $(".confirm-box-wrap").append(`
+        <div class="confirm-box-item display-flex" style="margin-top: 10px">
+            <label class="choice-file-btn display-flex">
+                <div>파일 선택</div>
+                <div class="confirm-txt"></div>
+                <input type="file" name="productImg" accept="image/*" style="display: none"/>
+            </label>
+            <input class="file-delete-btn" type="button" value="삭제" />
+        </div>`
+        );
+        i++;
+        confirmBoxSetting();
     });
 });
+
+const confirmBoxSetting = () => {
+
+    // confirm text
+    const $fileInputArr = document.querySelectorAll(".choice-file-btn > input");
+    const $confirmTxt = document.querySelectorAll(".confirm-txt");
+
+    $fileInputArr.forEach((input, index) => {
+        input.onchange = () => {
+            const splitPic = input.value.split("");
+            const joinPic = splitPic.slice(12).join("");
+            $confirmTxt[index].innerText = joinPic;
+        }
+    });
+
+    // delete
+    const $confirmBox = document.querySelectorAll(".confirm-box-item");
+    const $deleteBtnArr = document.querySelectorAll(".file-delete-btn");
+    $deleteBtnArr.forEach((btn, index) => {
+        btn.onclick = () => {
+            $confirmBox[index].remove()
+        }
+    })
+}

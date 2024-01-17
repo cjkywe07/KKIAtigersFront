@@ -22,8 +22,6 @@ main {
     width: 100%;
     justify-content: space-between;
     column-gap: 20px;
-    border-bottom: 2px solid;
-    padding-bottom: 20px;
 }
 #region-btn-wrap {
     column-gap: 20px;
@@ -55,8 +53,6 @@ main {
     flex-wrap: wrap;
     column-gap: 20px;
     row-gap: 20px;
-    border-bottom: 2px solid;
-    padding-bottom: 20px;
 }
 .list-content {
     position: relative;

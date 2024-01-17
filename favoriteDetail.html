@@ -6,8 +6,6 @@
         <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <script defer src="./js/favoriteDetail.js"></script>
         <link rel="stylesheet" href="./css/favoriteDetail.css" />
         <title>최애 자랑 게시판 상세</title>
@@ -50,46 +48,32 @@
                     </div>
                 </div>
 
-                <div id="detail-content-wrap" class="display-flex-set padding-line">
-                    <div id="title">너무 잘생겼어요</div>
+                <div id="detail-content-wrap" class="display-flex-set">
+                    <div id="title">우리도영이야구도잘하고잘생기고아주그냥혼자다하네근데이제헤드퍼스트도루는하지말자알겠지</div>
                     <div id="player-info-wrap" class="display-flex">
-                        <div id="position">투수 / 좌투좌타</div>
                         <div id="num-name-wrap" class="display-flex">
-                            <div id="num">54</div>
-                            <div id="name">양현종</div>
+                            <div id="num">05</div>
+                            <div id="name">김도영</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="swiper padding-line">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./img/player.jpg" />
-                        </div>
+                <div class="swiper padding-line display-flex">
+                    <div class="swiper-slide">
+                        <img src="./img/player.jpg" />
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-slide">
+                        <img src="./img/player.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/player.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/player.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/player.jpg" />
+                    </div>
                 </div>
             </div>
 
@@ -103,21 +87,12 @@
             </div>
 
             <div id="comment-wrap">
-                <div id="comment-content-wrap">
-                    <form action="" id="comment-write-wrap" class="comment-content display-flex">
-                        <input type="hidden" name="marketId" />
-                        <input type="hidden" name="userId" />
-                        <img class="writer-pic" src="./img/핑구1.jpg" />
-                        <div class="writer-nickname">어우기</div>
-                        <input class="comment-input" type="text" placeholder="댓글을 입력하세요" />
-                        <button type="button" class="comment-write-btn">작성</button>
-                    </form>
-                    
+                <div id="comment-content-wrap" class="display-flex">
                     <form action="" autocomplete="off" class="comment-content display-flex">
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다 ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
@@ -125,7 +100,7 @@
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다 ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
@@ -133,7 +108,7 @@
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다 ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
@@ -141,11 +116,20 @@
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다jjjjjjjjjjjjjj ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
                 </div>
+
+                <form action="" id="comment-write-wrap" class="comment-content display-flex">
+                    <input type="hidden" name="marketId" />
+                    <input type="hidden" name="userId" />
+                    <img class="writer-pic" src="./img/핑구1.jpg" />
+                    <div class="writer-nickname">어우기</div>
+                    <input class="comment-input" type="text" placeholder="댓글을 입력하세요" />
+                    <button type="button" class="comment-write-btn">작성</button>
+                </form>
             </div>
         </main>
     </body>
