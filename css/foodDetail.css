@@ -34,62 +34,46 @@ main {
 #detail-content-wrap {
     padding-top: 25px;
     align-items: center;
-    /* justify-content: end; */
     column-gap: 30px;
 }
 #map {
-    width: calc(1200px - 530px);
-    height: 500px;
+    width: calc(1200px - 520px - 30px);
+    height: 520px;
     border: 2px solid;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #e9e9e9;
 }
 
 #txt-content-wrap {
-    width: 500px;
-    height: 500px;
+    width: 520px;
+    height: 520px;
     flex-direction: column;
-    /* row-gap: 25px; */
     justify-content: space-between;
 }
-.txt-wrap,
-.txt-wrap-middle {
+.txt-wrap{
     padding: 10px 13px;
-    width: 500px;
+    width: 520px;
+    /* height: 520px; */ /* 식당 1개 */
+    /* height: 245.5px; */ /* 식당 2개 */
+    /* height: 155.5px; */ /* 식당 3개 */
+    height: 110px; /* 식당 4개 */
     border: 2px solid;
     border-radius: 5px;
-}
-.txt-wrap-middle:first-child {
-    width: 250px;
-    border-radius: 5px 0 0 5px;
-    /* justify-content: space-between; */
-}
-.txt-wrap-middle:last-child {
-    width: 250px;
-    border-left: none;
-    border-radius: 0 5px 5px 0;
-}
-/* .txt-wrap-middle > :first-child{
-    border-right: 1px solid;
-} */
-.txt-title {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-.txt-content {
-    font-size: 18px;
-}
-.txt-wrap:last-child {
-    height: 115px;
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
         display: none;
     }
 }
-#info {
+.store-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.info {
+    font-size: 18px;
     text-align: justify;
+    
 }
 
 /* ------------------------------------------------------------ */

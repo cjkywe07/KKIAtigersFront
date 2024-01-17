@@ -32,7 +32,7 @@
 
             <form name="write-form" action="" autocomplete="off">
                 <div id="write-info-wrap">
-                    <div id="write-info" class="padding-line display-flex">
+                    <div id="write-info" class="display-flex">
                         <input type="text" id="productName" placeholder="제목" name="productName" />
                         <input type="text" id="price" placeholder="식당 이름" name="price" />
                         <input type="text" id="region" placeholder="지역선택" name="region" />
@@ -51,17 +51,10 @@
                     </div>
                 </div>
 
-                <div id="write-content-wrap">
+                <div id="write-content-wrap" class="padding-line">
                     <textarea id="content" name="content" placeholder="소개 내용을 입력해 주세요"></textarea>
                     <p class="err-msg">내용을 입력해 주세요</p>
                 </div>
-
-                <!-- <div class="fileBox padding-line">
-                    <div>상품 이미지</div>
-                    <label for="file" class="picture-btn">파일 선택</label>
-                    <input type="file" id="file" class="product-pic" name="productImg" accept="image/*" style="display: none" />
-                    <div class="confirmBox">pic.jpg</div>
-                </div> -->
 
                 <div id="btn-wrap" class="display-flex">
                     <button type="button" id="submit-btn">작성완료</button>
