@@ -1,41 +1,38 @@
-$(function () {
-    var i = 0;
-    $(".picture-btn").click(function () {
-        $(".confirm-box-wrap").append(`
-        <div class="confirm-box-item display-flex" style="margin-top: 10px">
-            <label class="choice-file-btn display-flex">
-                <div>파일 선택</div>
-                <div class="confirm-txt"></div>
-                <input type="file" name="productImg" accept="image/*" style="display: none"/>
-            </label>
-            <input class="file-delete-btn" type="button" value="삭제" />
-        </div>`
-        );
-        i++;
-        confirmBoxSetting();
-    });
-});
+// validation
+const $errMsgArr = document.querySelectorAll(".err-msg");
+const $submitBtn = document.querySelector("#submit-btn");
+const $validInputArr = document.querySelectorAll(".valid");
+const $submitForm = document.querySelector("form");
 
-const confirmBoxSetting = () => {
+$submitBtn.onclick = () => {
+    
+    let count = 0;
+    let checkCost = false;
 
-    // confirm text
-    const $fileInputArr = document.querySelectorAll(".choice-file-btn > input");
-    const $confirmTxt = document.querySelectorAll(".confirm-txt");
-
-    $fileInputArr.forEach((input, index) => {
-        input.onchange = () => {
-            const splitPic = input.value.split("");
-            const joinPic = splitPic.slice(12).join("");
-            $confirmTxt[index].innerText = joinPic;
+    // check price
+    const checkPrice = (price) => {
+        if(isNaN(price.value)) { // 문자열이면
+            $errMsgArr[2].innerText = `* 숫자를 입력해 주세요`
+            $errMsgArr[2].style.display = `block`;
+            checkCost = false;
+        } else {
+            $errMsgArr[2].style.display = ``;
+            checkCost = true;
         }
-    });
+    }
 
-    // delete
-    const $confirmBox = document.querySelectorAll(".confirm-box-item");
-    const $deleteBtnArr = document.querySelectorAll(".file-delete-btn");
-    $deleteBtnArr.forEach((btn, index) => {
-        btn.onclick = () => {
-            $confirmBox[index].remove()
+    // 모두 입력 
+    $validInputArr.forEach((input, index) => {
+        if(!input.value) {
+            $errMsgArr[index].style.display = `block`;
+        } else {
+            $errMsgArr[index].style.display = ``;
+            if(index == 2) checkPrice(input);
+            count++;
         }
     })
+
+    if(count == 4 && checkCost) {
+        $submitForm.submit();
+    }
 }

@@ -1,4 +1,5 @@
-$(function(){
+// 첨부파일 
+$(function () {
     var i = 0;
     $(".picture-btn").click(function () {
         $(".confirm-box-wrap").append(`
@@ -29,6 +30,8 @@ $(function(){
 // }
 
 const confirmBoxSetting = () => {
+
+    // confirm text
     const $fileInputArr = document.querySelectorAll(".choice-file-btn > input");
     const $confirmTxt = document.querySelectorAll(".confirm-txt");
 
@@ -39,4 +42,13 @@ const confirmBoxSetting = () => {
             $confirmTxt[index].innerText = joinPic;
         }
     });
+
+    // delete
+    const $confirmBox = document.querySelectorAll(".confirm-box-item");
+    const $deleteBtnArr = document.querySelectorAll(".file-delete-btn");
+    $deleteBtnArr.forEach((btn, index) => {
+        btn.onclick = () => {
+            $confirmBox[index].remove()
+        }
+    })
 }

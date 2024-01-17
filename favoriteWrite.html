@@ -7,8 +7,9 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/favoriteWrite.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script defer src="./js/attachment.js"></script>
         <script defer src="./js/favoriteWrite.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <title>최애 자랑 게시판 작성</title>
     </head>
     <body>
@@ -36,25 +37,26 @@
                 <div id="write-info-wrap">
                     <div class="err-wrap display-flex">
                         <div>
-                            <p class="err-msg">제목을 입력해 주세요</p>
+                            <p class="err-msg">* 제목을 입력해 주세요</p>
                         </div>
                         <div>
-                            <p class="err-msg">선수 이름을 입력해 주세요</p>
+                            <p class="err-msg">* 선수 이름을 입력해 주세요</p>
                         </div>
                         <div>
-                            <p class="err-msg">번호를 입력해 주세요</p>
+                            <p class="err-msg">* 번호를 입력해 주세요</p>
                         </div>
                     </div>
 
                     <div id="write-info" class="display-flex">
-                        <input type="text" id="title" placeholder="제목" name="title" />
-                        <input type="text" id="playerName" placeholder="선수 이름" name="playerName" />
-                        <input type="text" id="num" placeholder="번호" name="num" />
+                        <input type="text" id="title" class="valid" placeholder="제목" name="title" />
+                        <input type="text" id="playerName" class="valid" placeholder="선수 이름" name="playerName" />
+                        <input type="text" id="num" class="valid" placeholder="번호" name="num" />
                     </div>
                 </div>
 
                 <div class="fileBox">
                     <div>선수 이미지</div>
+                    <p class="file-err-msg">* 사진을 하나 이상 업로드 해 주세요</p>
                     <div class="picture-btn">파일 추가</div>
                     <div class="confirm-box-wrap display-flex"></div>
                 </div>

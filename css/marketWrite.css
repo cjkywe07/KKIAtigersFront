@@ -36,6 +36,7 @@
 #write-info {
     border-top: 2px solid;
     border-bottom: 2px solid;
+    margin-bottom: 20px;
     height: 100px;
 }
 #write-info > :nth-child(1) {
@@ -65,13 +66,10 @@
     display: none;
 }
 .err-wrap > :nth-child(1) {
-    width: 43.5%;
+    width: 41.5%;
 }
 .err-wrap > :nth-child(2) {
-    width: 43.5%;
-}
-.err-wrap > :nth-child(3) {
-    width: 14%;
+    width: 38.6%;
 }
 
 /* ------------------------------------------------------------ */
@@ -89,9 +87,6 @@
 }
 #content::placeholder {
     color: rgb(190, 190, 190);
-}
-#write-content-wrap > p {
-    margin-top: 7px;
 }
 
 /* ------------------------------------------------------------ */

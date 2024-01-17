@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/marketWrite.css" />
-        <script defer src="./js/marketUpdate.js"></script>
+        <script defer src="./js/attachment.js"></script>
+        <script defer src="./js/marketWrite.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <title>마켓 수정</title>
     </head>
@@ -36,28 +37,28 @@
                 <div id="write-info-wrap">
                     <div class="err-wrap display-flex">
                         <div>
-                            <p class="err-msg">지역을 입력해 주세요</p>
+                            <p class="err-msg">* 상품명을 입력해 주세요</p>
                         </div>
                         <div>
-                            <p class="err-msg">상품명을 입력해 주세요</p>
+                            <p class="err-msg">* 지역을 입력해 주세요</p>
                         </div>
                         <div>
-                            <p class="err-msg">가격을 입력해 주세요</p>
+                            <p class="err-msg">* 가격을 입력해 주세요</p>
                         </div>
                     </div>
 
                     <div id="write-info" class="display-flex">
-                        <input type="text" id="productName" placeholder="상품명" name="productName" value="굿즈" />
-                        <input type="text" id="region" placeholder="지역선택" name="region" value="광주광역시 북구" />
-                        <input type="text" id="price" placeholder="가격" name="price" value="50000" />
+                        <input type="text" id="productName" class="valid" placeholder="상품명" name="productName" value="굿즈" />
+                        <input type="text" id="region" class="valid" placeholder="지역선택" name="region" value="광주광역시 북구" />
+                        <input type="text" id="price" class="valid" placeholder="가격" name="price" value="50000" />
                     </div>
                 </div>
 
                 <div id="write-content-wrap">
-                    <textarea id="content" name="content" placeholder="내용을 입력해 주세요" class="padding-line">
+                    <p class="err-msg">* 내용을 입력해 주세요</p>
+                    <textarea id="content" name="content" placeholder="내용을 입력해 주세요" class="valid">
 챔필 앞에서 직거래 원합니다</textarea
                     >
-                    <p class="err-msg">내용을 입력해 주세요</p>
                 </div>
 
                 <div class="fileBox">
