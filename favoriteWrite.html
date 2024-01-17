@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/favoriteWrite.css" />
-        <!-- <script defer src="./js/favoriteWrite.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script defer src="./js/favoriteWrite.js"></script>
         <title>최애 자랑 게시판 작성</title>
     </head>
     <body>
@@ -23,5 +24,50 @@
                 <a id="login-btn" href="./login.html">LOGIN</a>
             </div>
         </header>
+
+        <main>
+            <div id="writer-wrap" class="display-flex padding-line">
+                <img src="./img/핑구1.jpg" />
+                <div id="nickname">어우기</div>
+            </div>
+
+            <form name="write-form" action="" autocomplete="off">
+                <div id="write-info-wrap">
+                    <div id="write-info" class="padding-line display-flex">
+                        <input type="text" id="title" placeholder="제목" name="title" />
+                        <input type="text" id="playerName" placeholder="선수 이름" name="playerName" />
+                        <input type="text" id="position" placeholder="포지션" name="position" />
+                        <input type="text" id="num" placeholder="번호" name="num" />
+                    </div>
+
+                    <div class="err-wrap display-flex">
+                        <div>
+                            <p class="err-msg">제목을 입력해 주세요</p>
+                        </div>
+                        <div>
+                            <p class="err-msg">선수 이름을 입력해 주세요</p>
+                        </div>
+                        <div>
+                            <p class="err-msg">포지션을 입력해 주세요</p>
+                        </div>
+                        <div>
+                            <p class="err-msg">번호를 입력해 주세요</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="file-wrap" class="padding-line">
+                    <div>선수 이미지</div>
+                    <button type="button" id="add-btn">파일 추가</button>
+                    <div id="fileBox-wrap"></div>
+                    <p class="err-msg">첨부파일을 하나 이상 선택해 주세요</p>
+                </div>
+
+                <div id="btn-wrap" class="display-flex">
+                    <button type="button" id="submit-btn">작성완료</button>
+                    <a href="./favoriteList.html">목록</a>
+                </div>
+            </form>
+        </main>
     </body>
 </html>

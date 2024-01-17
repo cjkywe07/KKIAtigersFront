@@ -1,6 +1,6 @@
-#foodDetail-wrap {
+main {
     width: 1200px;
-    margin: 15px auto 50px;
+    margin: 0 auto 50px;
 }
 
 #detail-header-wrap {
@@ -34,19 +34,23 @@
 #detail-content-wrap {
     padding-top: 25px;
     align-items: center;
-    justify-content: end;
+    /* justify-content: end; */
     column-gap: 30px;
 }
 #map {
-    width: 670px;
-    height: 346px;
+    width: calc(1200px - 530px);
+    height: 500px;
+    border: 2px solid;
     border-radius: 10px;
     background-color: #e9e9e9;
 }
 
 #txt-content-wrap {
+    width: 500px;
+    height: 500px;
     flex-direction: column;
-    row-gap: 25px;
+    /* row-gap: 25px; */
+    justify-content: space-between;
 }
 .txt-wrap,
 .txt-wrap-middle {
@@ -109,5 +113,79 @@
 
     &:hover {
         background-color: var(--yellow-btn-hover);
+    }
+}
+
+/* ------------------------------------------------------------ */
+
+#comment-wrap {
+    margin-top: 50px;
+}
+.comment-content {
+    align-items: center;
+    column-gap: 15px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    /* background-color: var(--comment-color); */
+    background-color: rgb(244, 244, 244);
+}
+.writer-pic {
+    width: 40px;
+    border-radius: 50%;
+}
+.writer-nickname {
+    width: 209px;
+}
+.write-time {
+    margin-left: auto;
+}
+.comment-delete-btn {
+    padding: 0 12px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 38px;
+    background-color: salmon;
+    cursor: pointer;
+    font-weight: 500;
+    display: none;
+}
+
+#comment-write-wrap {
+    align-items: center;
+    background-color: var(--yellow-btn);
+}
+#comment-write-wrap > .writer-nickname {
+    width: 16.84%;
+}
+.comment-input {
+    width: 71.35%;
+    padding: 7px 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+.comment-input:focus {
+    border: 2px solid rgb(255, 215, 83);
+}
+.comment-input::placeholder {
+    color: rgb(190, 190, 190);
+}
+.comment-write-btn {
+    padding: 0 12px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 38px;
+    background: rgb(255, 215, 83);
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+        background-color: rgb(255, 204, 35);
     }
 }
