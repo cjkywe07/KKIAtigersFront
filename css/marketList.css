@@ -34,7 +34,6 @@ button {
 }
 
 #btn-wrap {
-    /* justify-self: end; */
     column-gap: 30px;
 }
 [name="search-form"] {
@@ -126,17 +125,25 @@ button {
 
 /* ------------------------------------------------------------ */
 
+#pagination-content {
+    border: 2px solid;
+    border-radius: 5px;
+}
 #pagination-content > li {
     line-height: 45px;
+    border-right: 2px solid;
+
+    &:last-of-type {
+        border: none;
+    }
 }
 #pagination-content > li > a {
     display: block;
-    height: 35px;
-    width: 35px;
-    margin: 0 3px;
+    height: 40px;
+    width: 42px;
     text-align: center;
-    line-height: 35px;
-    border-radius: 50%;
+    line-height: 40px;
+    font-weight: 600;
 }
 #pagination-content > li > a:hover {
     background-color: var(--yellow-btn);
