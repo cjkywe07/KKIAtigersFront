@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/marketList.css" />
+        <script defer src="./js/header.js"></script>
+        <script defer src="./js/pagination.js"></script>
         <!-- <script defer src="./js/marketList.js"></script> -->
         <title>마켓 리스트</title>
     </head>
@@ -27,74 +29,74 @@
         <!-- 작성하기 버튼 위치 어디가 좋을까나?? -->
         <div id="marketList-wrap">
             <div id="list-header-wrap" class="display-flex">
-                <div id="keyword-wrap" class="display-flex">
-                    <p>인기키워드</p>
-                    <p>#유니폼</p>
-                    <p>#야구공</p>
-                    <p>#김도영</p>
-                    <p>#티켓</p>
-                </div>
-
-                <div id="btn-wrap" class="display-flex-set">
-                    <form name="search-form" action="" autocomplete="off" class="display-flex-set">
-                        <button type="button" id="initial-btn">초기화</button>
-                        <input type="text" id="search-input" placeholder="검색어를 입력하세요" />
-                        <button type="submit" id="search-btn">
-                            <img id="search-btn-img" src="./img/search.png" alt="search" />
-                        </button>
-                    </form>
-
+                <div id="list-header-txt">마켓</div>
+                <div id="list-search-wrap" class="display-flex">
                     <a id="write-btn" href="./marketWrite.html">작성하기</a>
+                    <div id="btn-wrap" class="display-flex-set">
+                        <form name="search-form" action="" autocomplete="off" class="display-flex">
+                            <button type="button" id="initial-btn">초기화</button>
+                            <input type="text" id="search-input" placeholder="검색어를 입력하세요" />
+                            <button type="submit" id="search-btn">검색</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
             <div id="list-wrap" class="display-flex">
-                <div class="list-content">
-                    <a href="./marketDetail.html" class="display-flex">
-                        <img class="product-img" src="./img/goods.jpg" />
-                        <div class="product-name">굿즈굿즈굿즈굿즈굿즈굿즈</div>
-                        <div class="product-price">50,000원</div>
+                <a href="./marketDetail.html" class="list-content display-flex">
+                    <img class="product-img" src="./img/goods.jpg" />
+                    <div class="product-inform display-flex">
+                        <div class="product-name">굿즈ddddddddddddddddddddddddd</div>
+                        <div class="product-price">50,000</div>
                         <div class="product-region">전국</div>
-                    </a>
-                </div>
-                <div class="list-content">
-                    <a href="./marketDetail.html" class="display-flex">
-                        <img class="product-img" src="./img/goods.jpg" />
+                    </div>
+                </a>
+                <a href="./marketDetail.html" class="list-content display-flex">
+                    <img class="product-img" src="./img/goods.jpg" />
+                    <div class="product-inform display-flex">
                         <div class="product-name">굿즈</div>
                         <div class="product-price">50,000</div>
                         <div class="product-region">전국</div>
-                    </a>
-                </div>
-                <div class="list-content">
-                    <a href="./marketDetail.html" class="display-flex">
-                        <img class="product-img" src="./img/goods.jpg" />
+                    </div>
+                </a>
+                <a href="./marketDetail.html" class="list-content display-flex">
+                    <img class="product-img" src="./img/goods.jpg" />
+                    <div class="product-inform display-flex">
                         <div class="product-name">굿즈</div>
                         <div class="product-price">50,000</div>
                         <div class="product-region">전국</div>
-                    </a>
-                </div>
-                <div class="list-content">
-                    <a href="./marketDetail.html" class="display-flex">
-                        <img class="product-img" src="./img/goods.jpg" />
+                    </div>
+                </a>
+                <a href="./marketDetail.html" class="list-content display-flex">
+                    <img class="product-img" src="./img/goods.jpg" />
+                    <div class="product-inform display-flex">
                         <div class="product-name">굿즈</div>
                         <div class="product-price">50,000</div>
                         <div class="product-region">전국</div>
-                    </a>
-                </div>
-                <div class="list-content">
-                    <a href="./marketDetail.html" class="display-flex">
-                        <img class="product-img" src="./img/goods.jpg" />
+                    </div>
+                </a>
+                <a href="./marketDetail.html" class="list-content display-flex">
+                    <img class="product-img" src="./img/goods.jpg" />
+                    <div class="product-inform display-flex">
                         <div class="product-name">굿즈</div>
                         <div class="product-price">50,000</div>
                         <div class="product-region">전국</div>
-                    </a>
-                </div>
+                    </div>
+                </a>
+                <a href="./marketDetail.html" class="list-content display-flex">
+                    <img class="product-img" src="./img/goods.jpg" />
+                    <div class="product-inform display-flex">
+                        <div class="product-name">굿즈</div>
+                        <div class="product-price">50,000</div>
+                        <div class="product-region">전국</div>
+                    </div>
+                </a>
             </div>
 
             <div id="pagination-wrap" class="display-flex-set">
                 <ul id="pagination-content" class="display-flex">
                     <li>
-                        <a href=""><img src="./img/prevArrow.png" height="12px" /></a>
+                        <a class="move-btn" href=""><img src="./img/prevArrow.png" height="12px" /></a>
                     </li>
                     <li><a href="">1</a></li>
                     <li><a href="">2</a></li>
@@ -102,7 +104,7 @@
                     <li><a href="">4</a></li>
                     <li><a href="">5</a></li>
                     <li>
-                        <a href=""><img src="./img/nextArrow.png" height="12px" /></a>
+                        <a class="move-btn" href=""><img src="./img/nextArrow.png" height="12px" /></a>
                     </li>
                 </ul>
             </div>

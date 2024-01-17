@@ -71,10 +71,10 @@ function calendarInit() {
         const $mainHeight = $(".cal-main").height();
 
         if ($mainHeight == 845) {
-            $(".cal-wrap").css("height", 1130);
+            $(".cal-wrap").css("height", 1114);
             $("#game-wrapper").css("height", 1170);
         } else if ($mainHeight == 1005) {
-            $(".cal-wrap").css("height", 1290);
+            $(".cal-wrap").css("height", 1274);
             $("#game-wrapper").css("height", 1330);
         }
 

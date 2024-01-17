@@ -1,5 +1,5 @@
 const $menuArr = document.querySelectorAll("header .header-menu");
-const setMenuArr = ["game.html", "market.html", "community.html"]; // intellij --> .html 지우기
+const setMenuArr = ["game.html", "marketList.html", "community.html"]; // intellij --> .html 지우기
 
 // 어느 페이지
 let link = document.location.href;

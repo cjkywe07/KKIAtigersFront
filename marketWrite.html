@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/marketWrite.css" />
-        <!-- <script defer src="./js/marketWrite.js"></script> -->
+        <script defer src="./js/marketWrite.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <title>마켓 작성</title>
     </head>
     <body>
@@ -24,7 +25,7 @@
             </div>
         </header>
 
-        <!-- 지역 선택창 만들어야 하는데 전국 행정구역으로 할까요?? -->
+        <!-- 지역 선택창 만들어야 하는데 전국 행정구역으로 할까요?? 네네 -->
         <div id="marketWrite-wrap">
             <div id="writer-wrap" class="display-flex padding-line">
                 <img src="./img/핑구1.jpg" />
@@ -33,9 +34,9 @@
 
             <form name="write-form" action="" autocomplete="off">
                 <div id="write-info-wrap">
-                    <div id="write-info" class="padding-line display-flex">
-                        <input type="text" id="region" placeholder="지역선택" name="region" />
+                    <div id="write-info" class="display-flex">
                         <input type="text" id="productName" placeholder="상품명" name="productName" />
+                        <input type="text" id="region" placeholder="지역선택" name="region" />
                         <input type="text" id="price" placeholder="가격" name="price" />
                     </div>
 
@@ -59,9 +60,8 @@
 
                 <div class="fileBox padding-line">
                     <div>상품 이미지</div>
-                    <label for="file" class="picture-btn">파일 선택</label>
-                    <input type="file" id="file" class="product-pic" name="productImg" accept="image/*" style="display: none" />
-                    <div class="confirmBox">pic.jpg</div>
+                    <div class="picture-btn">파일 추가</div>
+                    <div class="confirm-box-wrap display-flex"></div>
                 </div>
 
                 <div id="btn-wrap" class="display-flex">
