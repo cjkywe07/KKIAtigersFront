@@ -39,16 +39,16 @@
     height: 100px;
 }
 #write-info > :nth-child(1) {
-    width: 58%;
+    width: 64%;
     border-right: 2px solid;
 }
 #write-info > :nth-child(2) {
-    width: 28%;
+    width: 25%;
     margin-left: 20px;
     border-right: 2px solid;
 }
 #write-info > :nth-child(3) {
-    width: 14%;
+    width: 11%;
     margin-left: 20px;
 }
 #write-info input::placeholder {
@@ -61,10 +61,10 @@
     display: none;
 }
 .err-wrap > :nth-child(1) {
-    width: 57%;
+    width: 62%;
 }
 .err-wrap > :nth-child(2) {
-    width: 28.6%;
+    width: 26%;
 }
 
 /* ------------------------------------------------------------ */

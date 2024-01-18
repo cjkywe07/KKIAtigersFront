@@ -1,4 +1,4 @@
-#marketList-wrap {
+#postList-wrap {
     width: 1200px;
     margin: 0px auto 50px;
     border: 2px solid;
@@ -7,6 +7,10 @@
 }
 button {
     cursor: pointer;
+}
+.border-and-radius {
+    border: 2px solid;
+    border-radius: 5px;
 }
 
 /* ------------------------------------------------------------ */
@@ -51,41 +55,56 @@ button {
 /* ------------------------------------------------------------ */
 
 #list-wrap {
-    flex-wrap: wrap;
-    column-gap: 21px;
+    width: 100%;
     row-gap: 20px;
+    flex-direction: column;
     margin-bottom: 20px;
     min-height: 400px;
 }
 #list-wrap .list-content {
-    width: 214px;
-    height: 336px;
-    flex-direction: column;
+    width: 100%;
+    height: 50px;
     overflow: hidden;
-    border-radius: 5px;
-    border: 2px solid;
-    background-color: var(--light-blue);
-}
-.product-img {
-    width: 100%;
-    height: 210px;
-    border-bottom: 2px solid;
-}
-.product-inform {
-    width: 100%;
-    padding: 20px;
-    flex-wrap: wrap;
-    row-gap: 5px;
-    FONT-WEIGHT: 500;
-}
-.product-name {
-    width: 100%;
-    font-size: 18px;
     font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    line-height: 45px;
+    background: var(--light-blue);
+
+    &:hover:not(:first-child) {
+        .post-title {
+            text-decoration: underline;
+        }
+    }
+}
+.post-inform {
+    width: 100%;
+}
+.post-inform > div {
+    border-right: 2px solid;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-.product-region {
-    width: 100%;
+    
+    &:nth-child(1) {
+        width: 7%;
+    }
+    &:nth-child(2) {
+        width: 7%;
+    }
+    &:nth-child(3) {
+        padding: 0 20px;
+        width: 52%;
+    }
+    &:nth-child(4) {
+        padding: 0 20px;
+        width: 17%;
+    }
+    &:nth-child(5) {
+        width: 7%;
+    }
+    &:nth-child(6) {
+        width: 10%;
+        border: none;
+    }
 }

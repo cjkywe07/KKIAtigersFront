@@ -8,8 +8,20 @@ $submitBtn.onclick = () => {
     
     let count = 0;
     let checkNum = false;
+    let titleCheck = false;
+    
+    // 제목 30자 이하 
+    const checkTitle = (title) => {
+        if(title.value.length > 30) {
+            $errMsgArr[0].style.display = `block`;
+            $errMsgArr[0].innerHTML = `* 제목은 30자 이하로 작성해 주세요`;
+        } else {
+            $errMsgArr[0].style.display = ``;
+            titleCheck = true;
+        }
+    }
 
-    // check price
+    // 문자열 체크
     const checkNumber = (num) => {
         if(isNaN(num.value)) { // 문자열이면
             $errMsgArr[2].innerText = `* 숫자를 입력해 주세요`
@@ -27,6 +39,7 @@ $submitBtn.onclick = () => {
             $errMsgArr[index].style.display = `block`;
         } else {
             $errMsgArr[index].style.display = ``;
+            if(index == 0) checkTitle(input);
             if(index == 2) checkNumber(input);
             count++;
         }
@@ -52,7 +65,7 @@ $submitBtn.onclick = () => {
         $fileErrMsg.style.display = `block`;
     }
 
-    if(count == 3 && checkNum && checkFile) {
+    if(count == 3 && checkNum && checkFile && titleCheck) {
         $submitForm.submit();
     }
 }

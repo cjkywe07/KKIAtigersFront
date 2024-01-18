@@ -37,20 +37,21 @@
                 <div id="write-info-wrap">
                     <div class="err-wrap display-flex">
                         <div>
+                            <p class="err-msg">* 가격을 입력해 주세요</p>
+                        </div>
+                        <div>
                             <p class="err-msg">* 상품명을 입력해 주세요</p>
                         </div>
                         <div>
                             <p class="err-msg">* 지역을 입력해 주세요</p>
                         </div>
-                        <div>
-                            <p class="err-msg">* 가격을 입력해 주세요</p>
-                        </div>
                     </div>
 
                     <div id="write-info" class="display-flex">
-                        <input type="text" id="productName" class="valid" placeholder="상품명" name="productName" value="굿즈" />
-                        <input type="text" id="region" class="valid" placeholder="지역선택" name="region" value="광주광역시 북구" />
-                        <input type="text" id="price" class="valid" placeholder="가격" name="price" value="50000" />
+                        <input type="text" id="price" class="valid" placeholder="가격" name="price" value="50000"/>
+                        <input type="text" id="productName" class="valid" placeholder="상품명" name="productName" value="굿즈"/>
+                        <input type="text" list="region-wrap" id="region" class="valid" placeholder="지역" name="region" value="서울특별시 성동구"/>
+                        <datalist id="region-wrap"  class="display-flex-set"></datalist>
                     </div>
                 </div>
 
@@ -64,6 +65,7 @@
                 <div class="fileBox">
                     <!-- <div id="delete-file-wrap" style="display: none;"></div> -->
                     <div>상품 이미지</div>
+                    <p class="file-err-msg">* 사진을 하나 이상 업로드 해 주세요</p>
                     <div class="picture-btn">파일 추가</div>
                     <div class="confirm-box-wrap display-flex"></div>
                 </div>
