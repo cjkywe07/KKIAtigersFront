@@ -47,9 +47,6 @@ main {
     font-size: 30px;
     font-weight: 600;
 }
-#position {
-    font-size: 16px;
-}
 #player-info-wrap {
     height: 100%;
     justify-content: center;
@@ -61,6 +58,18 @@ main {
     border-left: 2px solid;
     align-items: center;
 }
+
+#heart {
+    /* fill: rgb(255, 110, 110); */
+    fill: white;
+    width: 40px;
+    stroke: #333;
+    stroke-width: 60px;
+    cursor: pointer;
+    margin-right: 20px;
+    transform: translateY(10%);
+}
+
 #num {
     color: #ea0029;
 }
@@ -108,4 +117,3 @@ main {
         background-color: var(--yellow-btn);
     }
 }
-

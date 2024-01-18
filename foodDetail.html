@@ -6,6 +6,7 @@
         <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
         <link rel="stylesheet" href="./css/common.css" />
         <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/comment.css" />
         <link rel="stylesheet" href="./css/foodDetail.css" />
         <!-- <script defer src="./js/foodDetail.js"></script> -->
         <title>구장별 맛집 상세</title>
@@ -26,7 +27,7 @@
 
         <main>
             <div id="detail-wrap">
-                <div id="detail-header-wrap" class="display-flex-set">
+                <div id="detail-header-wrap" class="display-flex-set padding-line">
                     <div id="writer-wrap" class="display-flex">
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">어우기</div>
@@ -34,7 +35,7 @@
 
                     <div id="num-wrap" class="display-flex">
                         <div class="display-flex-set">
-                            <div>좋아요수</div>
+                            <div>저장수</div>
                             <div>13</div>
                         </div>
                         <div class="display-flex-set">
@@ -48,41 +49,75 @@
                     </div>
                 </div>
 
+                <div id="title" class="padding-line display-flex">
+                    <div class="content-zzimBtn">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="bi bi-star-fill"
+                            width="35"
+                            height="35"
+                            viewBox="0 0 16 16"
+                            id="star"
+                        >
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                            />
+                        </svg>
+                    </div>
+                    <div>토박이의 광주찐맛집</div>
+                </div>
+
                 <div id="detail-content-wrap" class="display-flex">
                     <div id="map">지도</div>
 
                     <div id="txt-content-wrap" class="display-flex">
                         <div class="txt-wrap">
-                            <div class="store-name">준식당</div>
+                            <div class="store-name display-flex">
+                                <img id="map-mark" src="./img/location.png" />
+                                준식당
+                            </div>
                             <div class="info">
-                                로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!
+                                로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다. 로컬 식당이라 주민들밖에 모르는데
+                                택시 기사님 추천받아서 갔다.
                             </div>
                         </div>
                         <div class="txt-wrap">
-                            <div class="store-name">준식당</div>
+                            <div class="store-name display-flex">
+                                <img id="map-mark" src="./img/location.png" />
+                                준식당
+                            </div>
                             <div class="info">
-                                로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!
+                                로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다. 로컬 식당이라 주민들밖에 모르는데
+                                택시 기사님 추천받아서 갔다. 로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다.
                             </div>
                         </div>
                         <div class="txt-wrap">
-                            <div class="store-name">준식당</div>
-                            <div class="info">
-                                로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!
+                            <div class="store-name display-flex">
+                                <img id="map-mark" src="./img/location.png" />
+                                준식당
                             </div>
+                            <div class="info">로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다.</div>
                         </div>
                         <div class="txt-wrap">
-                            <div class="store-name">준식당</div>
-                            <div class="info">
-                                로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다 왔어요. 저렴하고 맛있고 푸짐해요. 완전
-                                추천합니다!
+                            <div class="store-name display-flex">
+                                <img id="map-mark" src="./img/location.png" />
+                                준식당
                             </div>
+                            <div class="info">로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다.</div>
+                        </div>
+                        <div class="txt-wrap">
+                            <div class="store-name display-flex">
+                                <img id="map-mark" src="./img/location.png" />
+                                준식당
+                            </div>
+                            <div class="info">로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다.</div>
+                        </div>
+                        <div class="txt-wrap">
+                            <div class="store-name display-flex">
+                                <img id="map-mark" src="./img/location.png" />
+                                준식당
+                            </div>
+                            <div class="info">로컬 식당이라 주민들밖에 모르는데 택시 기사님 추천받아서 갔다.</div>
                         </div>
                     </div>
                 </div>
@@ -98,21 +133,12 @@
             </div>
 
             <div id="comment-wrap">
-                <div id="comment-content-wrap">
-                    <form action="" id="comment-write-wrap" class="comment-content display-flex">
-                        <input type="hidden" name="marketId" />
-                        <input type="hidden" name="userId" />
-                        <img class="writer-pic" src="./img/핑구1.jpg" />
-                        <div class="writer-nickname">어우기</div>
-                        <input class="comment-input" type="text" placeholder="댓글을 입력하세요" />
-                        <button type="button" class="comment-write-btn">작성</button>
-                    </form>
-                    
+                <div id="comment-content-wrap" class="display-flex">
                     <form action="" autocomplete="off" class="comment-content display-flex">
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다 ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
@@ -120,7 +146,7 @@
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다 ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
@@ -128,7 +154,7 @@
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다 ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
@@ -136,11 +162,20 @@
                         <input type="hidden" name="id" />
                         <img class="writer-pic" src="./img/핑구1.jpg" />
                         <div class="writer-nickname">djdnrl</div>
-                        <div class="write-content">제 최애 선수예요 ~</div>
+                        <div class="write-content">거래하고 싶습니다jjjjjjjjjjjjjj ~</div>
                         <div class="write-time">2023-12-05</div>
                         <input type="button" class="comment-delete-btn" value="삭제" />
                     </form>
                 </div>
+
+                <form action="" id="comment-write-wrap" class="comment-content display-flex">
+                    <input type="hidden" name="marketId" />
+                    <input type="hidden" name="userId" />
+                    <img class="writer-pic" src="./img/핑구1.jpg" />
+                    <div class="writer-nickname">어우기</div>
+                    <input class="comment-input" type="text" placeholder="댓글을 입력하세요" />
+                    <button type="button" class="comment-write-btn">작성</button>
+                </form>
             </div>
         </main>
     </body>

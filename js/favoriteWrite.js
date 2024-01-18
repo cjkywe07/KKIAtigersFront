@@ -10,11 +10,11 @@ $submitBtn.onclick = () => {
     let checkNum = false;
     let titleCheck = false;
     
-    // 제목 30자 이하 
+    // 제목 25자 이하 
     const checkTitle = (title) => {
-        if(title.value.length > 30) {
+        if(title.value.length > 25) {
             $errMsgArr[0].style.display = `block`;
-            $errMsgArr[0].innerHTML = `* 제목은 30자 이하로 작성해 주세요`;
+            $errMsgArr[0].innerHTML = `* 제목은 25자 이하로 작성해 주세요`;
         } else {
             $errMsgArr[0].style.display = ``;
             titleCheck = true;
