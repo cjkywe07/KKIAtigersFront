@@ -8,7 +8,11 @@
         <link rel="stylesheet" href="./css/header.css" />
         <link rel="stylesheet" href="./css/comment.css" />
         <link rel="stylesheet" href="./css/foodDetail.css" />
-        <!-- <script defer src="./js/foodDetail.js"></script> -->
+        <script
+            type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=02d9a33ac12fb7a7edb7579360286569&libraries=services"
+        ></script>
+        <script defer src="./js/foodDetail.js"></script>
         <title>구장별 맛집 상세</title>
     </head>
     <body>
@@ -68,7 +72,7 @@
                 </div>
 
                 <div id="detail-content-wrap" class="display-flex">
-                    <div id="map">지도</div>
+                    <div id="map"></div>
 
                     <div id="txt-content-wrap" class="display-flex">
                         <div class="txt-wrap">

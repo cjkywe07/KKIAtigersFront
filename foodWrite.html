@@ -30,18 +30,26 @@
         </header>
 
         <main>
-            <div id="writer-wrap" class="display-flex padding-line">
+            <div id="writer-wrap" class="display-flex">
                 <img src="./img/핑구1.jpg" />
                 <div id="nickname">어우기</div>
             </div>
 
-            <div>
-                <div class="err-wrap display-flex">
-                    <div>
-                        <p class="err-msg">* 검색어를 입력해 주세요</p>
+            <div id="write-wrap">
+                <div id="write-info-wrap">
+                    <div class="err-wrap display-flex">
+                        <div>
+                            <p class="err-msg">* 제목을 입력해 주세요</p>
+                        </div>
+                        <div>
+                            <p class="err-msg">* 지역을 선택해 주세요</p>
+                        </div>
                     </div>
-                    <div>
-                        <p class="err-msg">* 지역을 선택해 주세요</p>
+
+                    <div id="write-info" class="display-flex">
+                        <input type="text" id="input-title" placeholder="제목" />
+                        <div id="selected-region" class="selected-region">지역</div>
+                        <div id="region-wrap" class="region-wrap"></div>
                     </div>
                 </div>
 
@@ -50,136 +58,34 @@
                         <div id="search-wrap" class="display-flex">
                             <form onsubmit="searchPlaces(); return false;" class="display-flex">
                                 <input type="text" id="keyword" placeholder="맛집 검색" name="keyword" value="" />
-                                <div id="region-select-wrap">
-                                    <!-- <input type="hidden" id="region-input" name="region" /> -->
-                                    <div id="region-select-btn" class="region-select-btn">지역</div>
-                                    <div id="region-wrap" class="region-wrap"></div>
-                                </div>
-                                <button type="submit" id="search-btn">검색</button>
+                                <button type="submit" id="search-btn" style="font-size: 16px">검색</button>
                             </form>
                         </div>
 
-                        <ul id="placesList">
-                            <!-- <li class="item">
-                                <span class="markerbg marker_1"></span>
-                                <div class="info">
-                                    <h5>명동교자 이태원점</h5>
-                                    <span>서울 용산구 녹사평대로 136</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 34-149</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_2"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_3"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_4"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_5"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_6"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_7"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_8"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_9"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <span class="markerbg marker_10"></span>
-                                <div class="info">
-                                    <h5>라쿠치나</h5>
-                                    <span>서울 용산구 회나무로44길 10</span>
-                                    <span class="jibun gray">서울 용산구 이태원동 258-7</span>
-                                </div>
-                            </li> -->
-                        </ul>
+                        <ul id="placesList"></ul>
 
-                        <div id="pagination">
-                            <!-- <a href="#" class="on">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a> -->
-                        </div>
+                        <div id="pagination"></div>
                     </div>
 
                     <div id="map"></div>
                 </div>
+            </div>
 
-                <div id="txt-wrap">
+            <form name="write-form" action="">
+                <input type="hidden" id="submit-title" name="title" />
+                <input type="hidden" id="submit-region" name="region" />
+
+                <div class="padding-line">
                     <p class="err-msg">* 맛집을 하나 이상 선택해 주세요</p>
                     <div>추천 맛집</div>
-                    <div id="txt-content-wrap">
-                        <!-- <div class="txt-wrap">
-                            <div class="store-name display-flex">
-                                <p>준식당</p>
-                                <p class="err-msg">* 내용을 입력해 주세요</p>
-                            </div>
-                            <textarea class="store-info" placeholder="소개 내용을 입력해 주세요"></textarea>
-                            <button type="button" class="txt-delete-btn"></button>
-                        </div>
-                        <div class="txt-wrap">
-                            <div class="store-name display-flex">
-                                <p>준식당</p>
-                                <p class="err-msg">* 내용을 입력해 주세요</p>
-                            </div>
-                            <textarea class="store-info" placeholder="소개 내용을 입력해 주세요"></textarea>
-                            <button type="button" class="txt-delete-btn"></button>
-                        </div> -->
-                    </div>
+                    <div id="item-content-wrap" class="display-flex"></div>
                 </div>
 
                 <div id="btn-wrap" class="display-flex">
                     <button type="button" id="submit-btn">작성완료</button>
                     <a href="./foodList.html">목록</a>
                 </div>
-            </div>
+            </form>
         </main>
     </body>
 </html>
