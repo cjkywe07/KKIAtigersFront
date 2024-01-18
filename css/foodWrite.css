@@ -15,6 +15,7 @@ main {
     align-items: center;
     column-gap: 10px;
     padding-top: 0;
+    margin-bottom: 20px;
 }
 #writer-wrap > img {
     width: 40px;
@@ -25,30 +26,19 @@ main {
 
 #search-map-wrap {
     height: 500px;
+    padding-top: 0;
 }
 #menu-wrap {
     width: 30%;
+    font-size: 14px;
     border: 2px solid;
     border-right: none;
     border-radius: 5px 0 0 5px;
-
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
         display: none;
     }
-}
-#map-wrap {
-    width: 70%;
-    border: 2px solid;
-    border-radius: 0 5px 5px 0;
-}
-#map {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0 3px 3px 0;
 }
 
 #search-wrap {
@@ -72,11 +62,12 @@ main {
 #search-wrap input::placeholder {
     color: rgb(190, 190, 190);
 }
+
 #search-btn {
     padding-left: 4px;
     font-size: 20px;
     font-weight: 500;
-    width: 12%;
+    width: 12.8%;
     height: 83.45px;
     outline: none;
     border: none;
@@ -100,7 +91,6 @@ main {
     font-weight: 500;
     width: 100%;
     height: 83.45px;
-    border-left: none;
     letter-spacing: 5px;
     text-align: center;
     cursor: pointer;
@@ -110,17 +100,18 @@ main {
         color: #333;
     }
 }
-
+#region-select-btn.clicked {
+    color: #333;
+}
 #region-wrap {
     display: none;
     position: absolute;
-    width: 84.5px;
-    height: 220px;
+    width: 86.7px;
+    /* height: 368.5px; */
     top: 85.5px;
     right: 0;
     font-size: 18px;
-    border-radius: 0 0 5px 5px;
-    overflow: scroll;
+    /* border-left: 2px solid; */
     z-index: 10;
 
     &::-webkit-scrollbar {
@@ -129,82 +120,39 @@ main {
 }
 .region {
     width: 100%;
-    height: 40px;
+    height: 44px;
     text-align: center;
     line-height: 40px;
-    border-bottom: 1px solid white;
-    background-color: rgb(255, 233, 159);
+    border-left: 2px solid;
+    border-bottom: 2px solid;
     cursor: pointer;
+    background-color: white;
 }
 .region:last-child {
-    border-bottom: none;
+    /* border-bottom: none; */
+    border-radius: 0 0 0 5px;
 }
+.region:hover,
 .region.clicked {
-    background-color: rgb(255, 204, 35);
+    background-color: var(--yellow-btn);
+}
+
+#map {
+    width: 70%;
+    border: 2px solid;
+    border-radius: 0 5px 5px 0;
 }
 
 /* ------------------------------------------------------------ */
 
-/* 키워드 검색 */
-.map-wrap,
-.map-wrap * {
-    margin: 0;
-    padding: 0;
-    font-family: "Malgun Gothic", dotum, "돋움", sans-serif;
-    font-size: 12px;
-}
-.map-wrap a,
-.map-wrap a:hover,
-.map-wrap a:active {
-    color: #000;
-    text-decoration: none;
-}
-.map-wrap {
-    position: relative;
-    width: 100%;
-    height: 500px;
-}
-#menu-wrap {
-    overflow-y: auto;
-    background: rgba(255, 255, 255, 0.7);
-    z-index: 1;
-    font-size: 12px;
-}
-/* .bg-white {
-    background: #fff;
-} */
-#menu-wrap hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 2px solid #5f5f5f;
-    margin: 3px 0;
-}
-/* #menu-wrap .option {
-    text-align: center;
-}
-#menu-wrap .option p {
-    margin: 10px 0;
-}
-#menu-wrap .option button {
-    margin-left: 5px;
-} */
-/* #placesList {
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-} */
-#placesList li {
-    list-style: none;
-}
 #placesList .item {
-    position: relative;
-    border-bottom: 1px solid #888;
-    overflow: hidden;
+    display: flex;
+    /* position: relative; */
+    border-bottom: 2px solid;
     cursor: pointer;
-    min-height: 65px;
+}
+#placesList .item h5 {
+    font-size: 18px;
 }
 #placesList .item span {
     display: block;
@@ -217,83 +165,67 @@ main {
     white-space: nowrap;
 }
 #placesList .item .info {
-    padding: 10px 0 10px 55px;
+    width: 90%;
+    padding: 10px;
 }
 #placesList .info .gray {
     color: #8a8a8a;
 }
 #placesList .info .jibun {
-    padding-left: 26px;
-    background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;
-}
-#placesList .info .tel {
-    color: #009900;
+    padding-left: 34px;
+    background: url(../img/jibun.png) no-repeat 0% 180% / 30px auto;
 }
 #placesList .item .markerbg {
-    float: left;
-    position: absolute;
-    width: 36px;
-    height: 37px;
-    margin: 10px 0 0 10px;
-    background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+    /* position: absolute; */
+    width: 10%;
+    height: 40px;
+    margin: 10px 0 10px 7px;
+    background: url(../img/markers.png) no-repeat top / 42px;
 }
-#placesList .item .marker-1 {
-    background-position: 0 -10px;
+#placesList .item .marker_1 {
+    background-position: 0 0;
 }
-#placesList .item .marker-2 {
-    background-position: 0 -56px;
+#placesList .item .marker_2 {
+    background-position: 0 -44px;
 }
-#placesList .item .marker-3 {
-    background-position: 0 -102px;
+#placesList .item .marker_3 {
+    background-position: 0 -88px;
 }
-#placesList .item .marker-4 {
-    background-position: 0 -148px;
+#placesList .item .marker_4 {
+    background-position: 0 -132px;
 }
-#placesList .item .marker-5 {
-    background-position: 0 -194px;
+#placesList .item .marker_5 {
+    background-position: 0 -176px;
 }
-#placesList .item .marker-6 {
-    background-position: 0 -240px;
+#placesList .item .marker_6 {
+    background-position: 0 -220px;
 }
-#placesList .item .marker-7 {
-    background-position: 0 -286px;
+#placesList .item .marker_7 {
+    background-position: 0 -265px;
 }
-#placesList .item .marker-8 {
-    background-position: 0 -332px;
+#placesList .item .marker_8 {
+    background-position: 0 -309px;
 }
-#placesList .item .marker-9 {
-    background-position: 0 -378px;
+#placesList .item .marker_9 {
+    background-position: 0 -353px;
 }
-#placesList .item .marker-10 {
-    background-position: 0 -423px;
+#placesList .item .marker_10 {
+    background-position: 0 -398px;
 }
-#placesList .item .marker-11 {
-    background-position: 0 -470px;
-}
-#placesList .item .marker-12 {
-    background-position: 0 -516px;
-}
-#placesList .item .marker-13 {
-    background-position: 0 -562px;
-}
-#placesList .item .marker-14 {
-    background-position: 0 -608px;
-}
-#placesList .item .marker-15 {
-    background-position: 0 -654px;
-}
+
 #pagination {
     margin: 10px auto;
     text-align: center;
 }
 #pagination a {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 15px;
+    color: #999;
 }
 #pagination .on {
     font-weight: bold;
     cursor: default;
-    color: #777;
+    color: #333;
 }
 
 /* ------------------------------------------------------------ */
@@ -302,73 +234,83 @@ main {
     column-gap: 25px;
 }
 .err-msg {
-    margin-top: 7px;
     font-size: 14px;
     color: red;
+    margin-bottom: 7px;
     display: none;
 }
 .err-wrap > :nth-child(1) {
-    width: 43.5%;
-}
-.err-wrap > :nth-child(2) {
-    width: 43.5%;
-}
-.err-wrap > :nth-child(3) {
-    width: 14%;
+    width: 20.3%;
 }
 
 /* ------------------------------------------------------------ */
 
-.fileBox {
-    display: flex;
+#txt-wrap {
     flex-direction: column;
-    position: relative;
-    /* border-bottom: 2px solid; */
-    /* padding-top: 20px; */
+    border-bottom: 2px solid;
+    padding: 20px 0;
+    font-size: 16px;
 }
-.fileBox > div:nth-child(1) {
-    margin-bottom: 15px;
-    font-weight: 500;
+.store-name{
+    align-items: center;
+    column-gap: 15px;
 }
-.picture-btn {
-    width: 88px;
+.store-name > p:last-child {
+    font-size: 14px;
+    margin-bottom: 0;
 }
 
-.confirm-box-wrap {
-    margin-bottom: 20px;
+#txt-content-wrap {
     flex-direction: column;
 }
-.confirm-box-wrap > .confirm-box-item {
+.txt-wrap {
+    position: relative;
+    padding: 10px 13px;
+    margin-top: 15px;
     width: 100%;
+    height: 80px;
     border: 2px solid;
     border-radius: 5px;
-    justify-content: space-between;
-    overflow: hidden;
-}
-.confirm-box-item > .choice-file-btn {
-    width: 95%;
-    cursor: pointer;
-}
-.confirm-box-item > .choice-file-btn > * {
-    padding: 10px;
-    font-size: 16px;
-    border-right: 2px solid;
+    overflow-y: scroll;
 
-    &:first-of-type {
-        width: 8%;
-        background-color: var(--light-blue);
-    }
-    &:last-of-type {
-        width: 92%;
+    &::-webkit-scrollbar {
+        display: none;
     }
 }
-.confirm-box-item > .file-delete-btn {
-    padding: 10px;
-    background-color: hsl(0, 100%, 79%);
+.store-name {
+    margin-bottom: 10px;
+}
+.store-info {
+    text-align: justify;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
     font-size: 16px;
     font-weight: 500;
+}
+.store-info::placeholder {
+    color: rgb(190, 190, 190);
+}
+.txt-delete-btn {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    top: 10px;
+    right: 13px;
+    text-align: center;
     border: none;
-    width: 5%;
+    outline: none;
+    background-color: transparent;
+}
+.txt-delete-btn:after {
+    display: inline-block;
+    width: 100%;
+    content: "\00d7";
+    font-size: 14pt;
+    font-weight: 600;
+    color: rgb(255, 61, 39);
     cursor: pointer;
 }
 
