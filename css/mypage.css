@@ -552,10 +552,10 @@ input[name="memo"] {
         border-radius: 5px 0 0 5px;
     }
     &:nth-child(2) {
-        background-color: rgb(73, 73, 209);
+        background-color: rgb(43, 168, 43);
     }
     &:nth-child(3) {
-        background-color: rgb(43, 168, 43);
+        background-color: rgb(73, 73, 209);
     }
     &:nth-child(4) {
         background-color: rgb(155, 155, 155);
@@ -587,6 +587,23 @@ input[name="memo"] {
         cursor: pointer;
         background-color: #eaeaea;
     }
+}
+
+.win {
+    background-image: url("../img/win.png");
+    background-size: 100%;
+} 
+.draw {
+    background-image: url("../img/draw.png");
+    background-size: 100%;
+}
+.lose {
+    background-image: url("../img/lose.png");
+    background-size: 100%;
+}
+.cancel {
+    background-image: url("../img/cancel.png");
+    background-size: 100%;
 }
 
 /* drop user --------------------------------------------------------- */

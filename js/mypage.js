@@ -75,11 +75,26 @@ const clickUserModifyBtn = () => {
 $userModifyBtn.addEventListener("click", clickUserModifyBtn);
 
 // Diary --------------------------------------------------------------------------
-const modalSetting = () => {
+const recordArr = [
+    { recordDate: "2024.1.3", recordResult: "cancel" },
+    { recordDate: "2024.1.15", recordResult: "win" },
+    { recordDate: "2024.2.14", recordResult: "win" },
+];
+
+const diraySetting = () => {
     // 매달 배열 셋팅
     const $month = document.querySelector(".year-month");
     const $dateArr = document.querySelectorAll(".dates .day span");
 
+    // 직관 기록 셋팅
+    recordArr.forEach((record) => {
+        $dateArr.forEach((date) => {
+            let that = `${$month.innerText}.${date.innerText}`;
+            if (record.recordDate == that) { // 기록 있으면 
+                date.classList.add(`${record.recordResult}`);
+            }
+        })
+    });
     // 모달창 열리기
     $dateArr.forEach((date) => {
         date.onclick = () => {
@@ -93,26 +108,6 @@ const modalSetting = () => {
     };
 };
 
-// 직관기록 넣기 ------------------
-const recordArr = [
-    { recordDate: "2024.1.3", recordResult: "cancel" },
-    { recordDate: "2024.1.15", recordResult: "win" },
-    { recordDate: "2024.2.14", recordResult: "win" },
-];
-const writeGameResult = () => {
-    const $month = document.querySelector(".year-month");
-    const $dateArr = document.querySelectorAll(".dates .day span");
-
-    recordArr.forEach((record) => {
-        $dateArr.forEach((date) => {
-            let that = `${$month.innerText}.${date.innerText}`;
-            if (record.recordDate == that) {
-                date.style.background = `red`;
-            }
-        })
-    });
-};
-
 // submit setting ------------------
 const $date = document.querySelector("#modal-date");
 const $dateInput = document.querySelector("#modal-date-input");
@@ -120,11 +115,12 @@ const $resultArr = document.querySelectorAll("#result-wrap > div");
 const $resultInput = document.querySelector("#modal-result-input");
 let resultCheck = false;
 const $dirayErrMsg = document.querySelector(".diray-modal-items .error-msg");
+const resultArr = ["win", "draw", "lose", "cancel"];
 
 // 경기결과 setting
 $resultArr.forEach((text, index) => {
     text.onclick = () => {
-        $resultInput.value = text.innerText;
+        $resultInput.value = resultArr[index];
         resultCheck = true;
         for (let i = 0; i < $resultArr.length; i++) {
             if (i == index) {
@@ -225,10 +221,7 @@ function calendarInit() {
         }
 
         // ✅ 캘린더 바뀔 때마다 배열 셋팅
-        modalSetting();
-
-        // ✅ 직관 기록 넣기
-        writeGameResult();
+        diraySetting();
     }
 
     // 이전달로 이동
