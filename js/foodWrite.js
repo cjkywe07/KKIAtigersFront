@@ -25,9 +25,6 @@ var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
 function searchPlaces() {
     var keyword = document.getElementById("keyword").value;
 
-    console.log("함수 실행");
-    console.log(keyword);
-
     // if (!keyword.replace(/^\s+|\s+$/g, "")) {
     //     alert("키워드를 입력해주세요!");
     //     return false;
@@ -100,21 +97,6 @@ function displayPlaces(places) {
         })(marker, places[i].place_name);
 
         fragment.appendChild(itemEl);
-
-        itemEl.onclick = function () {
-            console.log("클릭");
-
-            $("#txt-content-wrap").append(`
-                <div class="txt-wrap">
-                    <div class="store-name display-flex">
-                        <p>...</p>
-                        <p class="err-msg">* 내용을 입력해 주세요</p>
-                    </div>
-                    <textarea class="store-info" placeholder="소개 내용을 입력해 주세요"></textarea>
-                    <button type="button" class="txt-delete-btn"></button>
-                </div>
-            `);
-        };
     }
 
     // 검색 결과 항목들을 검색 결과 목록 Element에 추가
@@ -123,6 +105,12 @@ function displayPlaces(places) {
 
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정
     map.setBounds(bounds);
+
+    // 검색 결과 목록 반환 후 #placesList > .item 들 가지고 와서
+    // 각 항목 클릭하면 추천 맛집 항목 추가
+    var listItems = document.querySelectorAll(".item");
+    var itemTitles = document.querySelectorAll(".item h5");
+    addTxtContent(listItems, itemTitles);
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
@@ -140,7 +128,7 @@ function getListItem(index, places) {
             `<span class="jibun gray">${places.address_name}</span>
         `;
     } else {
-        itemStr += `<span>${places.road_address_name}</span>`;
+        itemStr += `<span>${places.address_name}</span>`;
     }
 
     itemStr += `</div>`;
@@ -153,12 +141,12 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-    var imageSrc = "../img/markers",
-        imageSize = new kakao.maps.Size(36, 37), // 마커 이미지의 크기
+    var imageSrc = "./img/markers.png",
+        imageSize = new kakao.maps.Size(40, 46), // 마커 이미지의 크기
         imgOptions = {
-            spriteSize: new kakao.maps.Size(36, 691), // 이미지의 크기
+            spriteSize: new kakao.maps.Size(38, 691), // 이미지의 크기
             spriteOrigin: new kakao.maps.Point(0, idx * 46), // 이미지 중 사용할 영역의 좌상단 좌표
-            offset: new kakao.maps.Point(13, 37), // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+            offset: new kakao.maps.Point(20, 40), // 마커 좌표에 일치시킬 이미지 내에서의 좌표
         },
         markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
         marker = new kakao.maps.Marker({
@@ -214,7 +202,7 @@ function displayPagination(pagination) {
 // 검색 결과 목록 또는 마커를 클릭했을 때 호출되는 함수
 // 인포윈도우에 장소명을 표시
 function displayInfowindow(marker, title) {
-    var content = '<div style="padding:5px;z-index:1;">' + title + "</div>";
+    var content = '<div class="infoWindow" style="padding: 5px 0 7px 10px; z-index: 1;">' + title + "</div>";
 
     infowindow.setContent(content);
     infowindow.open(map, marker);
@@ -227,38 +215,51 @@ function removeAllChildNods(el) {
     }
 }
 
-// 검색 결과 목록 or 마커 선택 시 추천 맛집 아이템 추가하는 함수
-// function addTxtContent() {
-//     var listItems = document.querySelectorAll(".item");
+// ====================================================================================================
 
-// }
+// 검색 결과 항목 (or 마커 선택) 시 추천 맛집 아이템 추가하는 함수
+function addTxtContent(listItems, itemTitles) {
+    listItems.forEach(function (item, i) {
+        item.onclick = function () {
+            $("#item-content-wrap").append(`
+                <div class="item-wrap">
+                    <div class="txt-wrap display-flex">
+                        <div class="store-name">${itemTitles[i].textContent}</div>
+                        <textarea class="store-info" placeholder="소개 내용을 입력해 주세요" spellcheck="false" name="submit-info-${i}"></textarea>
+                        <button type="button" class="item-delete-btn"></button>
+                    </div>
+                    <p class="err-msg content-err-msg">* 내용을 입력해 주세요</p>
+                </div>
+            `);
 
-// itemEl.onclick = function () {
-//     console.log("클릭");
-
-//     $("#txt-content-wrap").append(`
-//         <div class="txt-wrap">
-//             <div class="store-name display-flex">
-//                 <p>${places[i].place_name}</p>
-//                 <p class="err-msg">* 내용을 입력해 주세요</p>
-//             </div>
-//             <textarea class="store-info" placeholder="소개 내용을 입력해 주세요"></textarea>
-//             <button type="button" class="txt-delete-btn"></button>
-//         </div>
-//     `);
-// };
+            var itemWraps = document.querySelectorAll(".item-wrap");
+            var itemDeletBtns = document.querySelectorAll(".item-delete-btn");
+            itemDeletBtns.forEach((btn, i) => {
+                btn.onclick = () => {
+                    console.log("x클릭");
+                    itemWraps[i].remove();
+                };
+            });
+        };
+    });
+}
 
 // ====================================================================================================
 
-// 지역 선택창
-
 const regionNames = ["고척", "광주", "대구", "대전", "부산", "수원", "인천", "잠실", "창원"];
 
-const keywordInput = document.querySelector("#keyword");
-const regionInput = document.querySelector("#region-input");
-const regionSelectBtn = document.querySelector("#region-select-btn");
+const titleInput = document.querySelector("#input-title");
+const titleSubmitInput = document.querySelector("#submit-title");
+const regionSubmitInput = document.querySelector("#submit-region");
+
+const selectedRegion = document.querySelector("#selected-region");
 const regionWrap = document.querySelector("#region-wrap");
 
+titleInput.onchange = () => {
+    titleSubmitInput.value = titleInput.value;
+};
+
+// 지역 선택창
 regionNames.forEach((regionName) => {
     regionWrap.innerHTML += `<div class="region">${regionName}</div>`;
 });
@@ -271,7 +272,7 @@ regionDiv.forEach((region) => {
         // 글자를 "지역" 으로 변경
         if (region.classList.contains("clicked")) {
             region.classList.remove("clicked");
-            regionSelectBtn.textContent = "지역";
+            selectedRegion.textContent = "지역";
         }
         // 방금 클릭한 지역이 지역 중에 첫 클릭이거나
         // 방금 클릭한 지역 이전에 클릭되어 있던 다른 지역이 있었다면
@@ -283,14 +284,14 @@ regionDiv.forEach((region) => {
             });
             region.classList.add("clicked");
 
-            regionSelectBtn.textContent = region.textContent;
+            selectedRegion.textContent = region.textContent;
         }
 
-        regionInput.value = region.textContent;
+        regionSubmitInput.value = region.textContent;
     });
 });
 
-regionSelectBtn.addEventListener("click", () => {
+selectedRegion.addEventListener("click", () => {
     // 지역 선택창 닫혀있었다면
     if (regionWrap.style.display !== "block") {
         $("#region-wrap").slideDown("fast");
@@ -302,20 +303,20 @@ regionSelectBtn.addEventListener("click", () => {
 
     // 지역 선택 버튼 클릭되어 있었고
     // 글자가 "지역" 이라면
-    if (regionSelectBtn.classList.contains("clicked") && regionSelectBtn.textContent == "지역") {
-        regionSelectBtn.classList.remove("clicked");
+    if (selectedRegion.classList.contains("clicked") && selectedRegion.textContent == "지역") {
+        selectedRegion.classList.remove("clicked");
     }
     // 지역 선택 버튼 클릭되어 있지 않았거나
     // 글자가 특정 지역이라면
     else {
-        regionSelectBtn.classList.add("clicked");
+        selectedRegion.classList.add("clicked");
     }
 });
 
 $(document).click(function (e) {
-    if (e.target.className == "region-select-btn") {
+    if (e.target.className == "selected-region") {
         return false;
-    } else if (e.target.className == "region-select-btn clicked") {
+    } else if (e.target.className == "selected-region clicked") {
         return false;
     } else if (e.target.className == "region") {
         return false;
@@ -325,11 +326,31 @@ $(document).click(function (e) {
 
     $("#region-wrap").slideUp("fast");
 
-    if (regionSelectBtn.textContent == "지역") {
-        regionSelectBtn.classList.remove("clicked");
+    if (selectedRegion.textContent == "지역") {
+        selectedRegion.classList.remove("clicked");
     } else {
-        regionSelectBtn.classList.add("clicked");
+        selectedRegion.classList.add("clicked");
     }
 });
 
 // ====================================================================================================
+
+// validation
+const writeBtn = document.querySelector("#submit-btn");
+const errMsgs = document.querySelectorAll(".err-msg");
+
+writeBtn.addEventListener("click", () => {
+    document.forms["write-form"].submit();
+});
+
+// 제목, 지역, 맛집 소개 반드시 작성
+// 맛집 하나 이상 선택
+// 추가한 추천 맛집 항목은 주소 or 좌표도 같이 제출 (상세페이지에서 마커 표시하기 위해)
+// (이미 선택한 맛집 추가 선택 안되게)
+// (마커 클릭 시에도 맛집 항목에 추가되게 - ...하지말자...)
+
+// 입력 없이 검색하면 검색어 입력 요구
+// 위 line 47, 50 - alert 말고 로그인 페이지같은 alert로
+
+// 인포윈도우 구려
+// 커스텀 오버레이로?? 하지만... 너무 괴로운걸
