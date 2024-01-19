@@ -93,6 +93,26 @@ const modalSetting = () => {
     };
 };
 
+// 직관기록 넣기 ------------------
+const recordArr = [
+    { recordDate: "2024.1.3", recordResult: "cancel" },
+    { recordDate: "2024.1.15", recordResult: "win" },
+    { recordDate: "2024.2.14", recordResult: "win" },
+];
+const writeGameResult = () => {
+    const $month = document.querySelector(".year-month");
+    const $dateArr = document.querySelectorAll(".dates .day span");
+
+    recordArr.forEach((record) => {
+        $dateArr.forEach((date) => {
+            let that = `${$month.innerText}.${date.innerText}`;
+            if (record.recordDate == that) {
+                date.style.background = `red`;
+            }
+        })
+    });
+};
+
 // submit setting ------------------
 const $date = document.querySelector("#modal-date");
 const $dateInput = document.querySelector("#modal-date-input");
@@ -206,6 +226,9 @@ function calendarInit() {
 
         // ✅ 캘린더 바뀔 때마다 배열 셋팅
         modalSetting();
+
+        // ✅ 직관 기록 넣기
+        writeGameResult();
     }
 
     // 이전달로 이동

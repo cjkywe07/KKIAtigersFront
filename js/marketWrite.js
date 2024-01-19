@@ -239,7 +239,6 @@ const regionArr = [
     "제주특별자치도 북제주군",
     "제주특별자치도 남제주군",
 ];
-const $datalist = document.querySelector("#region-wrap");
 regionArr.forEach((region) => {
     $("#region-wrap").append(`
         <option value="${region}" class="region-wrap"/>

@@ -88,6 +88,7 @@
     font-size: 20px;
     font-weight: 600;
     display: none;
+    z-index: 1;
 }
 .category-item {
     width: 100%;
@@ -98,6 +99,11 @@
     &:last-child {
         border-radius: 0 0 5px 5px;
     }
+}
+#write-info > #category.clicked,
+#write-info > #category-wrap.clicked {
+    color: #333;
+    display: block;
 }
 
 .err-msg, .file-err-msg {
