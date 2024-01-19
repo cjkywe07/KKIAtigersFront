@@ -1,3 +1,12 @@
+// 화면 스크롤 함수
+const scroll = (topVal) => {
+    window.scrollTo({
+        top: topVal,
+        left: 0,
+        behavior: "smooth",
+    });
+};
+
 // 맛집 검색 -> 검색 결과 목록 & 지도에 마커
 
 // 마커 배열
@@ -149,11 +158,11 @@ function getListItem(index, places) {
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
     var imageSrc = "./img/markers.png",
-        imageSize = new kakao.maps.Size(40, 46), // 마커 이미지의 크기
+        imageSize = new kakao.maps.Size(35, 47), // 마커 이미지의 크기
         imgOptions = {
-            spriteSize: new kakao.maps.Size(38, 691), // 이미지의 크기
+            spriteSize: new kakao.maps.Size(34, 691), // 이미지의 크기
             spriteOrigin: new kakao.maps.Point(0, idx * 46), // 이미지 중 사용할 영역의 좌상단 좌표
-            offset: new kakao.maps.Point(20, 40), // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+            offset: new kakao.maps.Point(18, 40), // 마커 좌표에 일치시킬 이미지 내에서의 좌표
         },
         markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
         marker = new kakao.maps.Marker({
@@ -209,7 +218,7 @@ function displayPagination(pagination) {
 // 검색 결과 목록 또는 마커를 클릭했을 때 호출되는 함수
 // 인포윈도우에 장소명을 표시
 function displayInfowindow(marker, title) {
-    var content = '<div class="infoWindow" style="padding: 5px 0 7px 10px; z-index: 1;">' + title + "</div>";
+    var content = '<div class="infoWindow" style="padding: 5px 10px 7px 10px; z-index: 1;">' + title + "</div>";
 
     infowindow.setContent(content);
     infowindow.open(map, marker);
@@ -275,6 +284,7 @@ function addTxtContent(listItems, itemTitles, itemAddresses, lats, lngs) {
             } else {
                 searchErrMsg.textContent = "* 이미 선택한 항목입니다.";
                 searchErrMsg.style.display = "block";
+                scroll(280);
             }
         };
     });
@@ -394,14 +404,6 @@ function searchErr(errMsg) {
     searchErrMsg.textContent = errMsg;
     searchErrMsg.style.display = "block";
 }
-
-const scroll = (topVal) => {
-    window.scrollTo({
-        top: topVal,
-        left: 0,
-        behavior: "smooth",
-    });
-};
 
 // 작성 제출 검증
 writeBtn.addEventListener("click", () => {
