@@ -255,6 +255,7 @@ main {
 #map {
     width: 70%;
     border: 2px solid;
+    border-radius: 0 5px 5px 0;
 }
 .infoWindow {
     width: 250px;
@@ -266,17 +267,20 @@ main {
 .err-wrap {
     column-gap: 25px;
 }
-.err-msg {
+.err-wrap > :nth-child(1) {
+    width: 86%;
+}
+.err-msg,
+.info-err-msg,
+.search-err-msg {
     font-size: 14px;
     color: red;
     margin-bottom: 7px;
     display: none;
 }
-.err-wrap > :nth-child(1) {
-    width: 86%;
-}
-.content-err-msg {
+.info-err-msg {
     margin-top: 7px;
+    margin-bottom: 0;
 }
 
 /* ------------------------------------------------------------ */

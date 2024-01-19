@@ -44,10 +44,12 @@ function placesSearchCB(data, status, pagination) {
         // 페이지 번호를 표출합니다
         displayPagination(pagination);
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-        alert("검색 결과가 존재하지 않습니다.");
+        // alert("검색 결과가 존재하지 않습니다.");
+        searchErr("* 검색 결과가 존재하지 않습니다.");
         return;
     } else if (status === kakao.maps.services.Status.ERROR) {
-        alert("검색 결과 중 오류가 발생했습니다.");
+        // alert("검색 결과 중 오류가 발생했습니다.");
+        searchErr("* 검색 결과 중 오류가 발생했습니다.");
         return;
     }
 }
@@ -110,7 +112,10 @@ function displayPlaces(places) {
     // 각 항목 클릭하면 추천 맛집 항목 추가
     var listItems = document.querySelectorAll(".item");
     var itemTitles = document.querySelectorAll(".item h5");
-    addTxtContent(listItems, itemTitles);
+    var itemAddresses = document.querySelectorAll(".jibun");
+    var lats = document.querySelectorAll(".lat");
+    var lngs = document.querySelectorAll(".lng");
+    addTxtContent(listItems, itemTitles, itemAddresses, lats, lngs);
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
@@ -125,10 +130,12 @@ function getListItem(index, places) {
     if (places.road_address_name) {
         itemStr +=
             `<span>${places.road_address_name}</span>` +
-            `<span class="jibun gray">${places.address_name}</span>
+            `<span class="jibun gray">${places.address_name}</span>` +
+            `<input type="hidden" class="lat" value="${places.y}" />` +
+            `<input type="hidden" class="lng" value="${places.x}" />
         `;
     } else {
-        itemStr += `<span>${places.address_name}</span>`;
+        itemStr += `<span class="jibun gray">${places.address_name}</span>`;
     }
 
     itemStr += `</div>`;
@@ -217,29 +224,58 @@ function removeAllChildNods(el) {
 
 // ====================================================================================================
 
-// 검색 결과 항목 (or 마커 선택) 시 추천 맛집 아이템 추가하는 함수
-function addTxtContent(listItems, itemTitles) {
+let j = 0;
+
+// 검색 결과 항목 선택 시 추천 맛집 아이템 추가하는 함수
+function addTxtContent(listItems, itemTitles, itemAddresses, lats, lngs) {
+    const searchErrMsg = document.querySelector(".search-err-msg");
+
     listItems.forEach(function (item, i) {
         item.onclick = function () {
-            $("#item-content-wrap").append(`
-                <div class="item-wrap">
-                    <div class="txt-wrap display-flex">
-                        <div class="store-name">${itemTitles[i].textContent}</div>
-                        <textarea class="store-info" placeholder="소개 내용을 입력해 주세요" spellcheck="false" name="submit-info-${i}"></textarea>
-                        <button type="button" class="item-delete-btn"></button>
-                    </div>
-                    <p class="err-msg content-err-msg">* 내용을 입력해 주세요</p>
-                </div>
-            `);
-
-            var itemWraps = document.querySelectorAll(".item-wrap");
-            var itemDeletBtns = document.querySelectorAll(".item-delete-btn");
-            itemDeletBtns.forEach((btn, i) => {
-                btn.onclick = () => {
-                    console.log("x클릭");
-                    itemWraps[i].remove();
-                };
+            let names = [];
+            let selectedStoreNames = document.querySelectorAll(".store-name");
+            selectedStoreNames.forEach((storeName) => {
+                names.push(storeName.textContent);
             });
+
+            let addresses = [];
+            let selectedStoreAddresses = document.querySelectorAll(".store-address");
+            selectedStoreAddresses.forEach((storeAddress) => {
+                addresses.push(storeAddress.value);
+            });
+
+            // 맛집 이름과 지번 주소가 같은 것을 선택하면 추가 안됨
+            // 추가된 추천 맛집 항목 리스트 중에, 검색창 리스트의 가게 이름과 지번 주소가 없는 경우에만 추천 맛집 추가 가능
+            if (!(names.includes(itemTitles[i].textContent) && addresses.includes(itemAddresses[i].textContent))) {
+                searchErrMsg.style.display = "";
+
+                $("#item-content-wrap").append(`
+                        <div class="item-wrap">
+                            <div class="txt-wrap display-flex">
+                                <div class="store-name">${itemTitles[i].textContent}</div>
+                                <textarea class="store-info" placeholder="소개 내용을 입력해 주세요" spellcheck="false" name="info-${j}"></textarea>
+                                <button type="button" class="item-delete-btn"></button>
+                                <input type="hidden" value="${itemAddresses[i].textContent}" class="store-address" />
+                                <input type="hidden" value="${lats[i].value}" name="lat-${j}" />
+                                <input type="hidden" value="${lngs[i].value}" name="lng-${j}" />
+                            </div>
+                            <p class="info-err-msg">* 내용을 입력해 주세요</p>
+                        </div>
+                    `);
+
+                var itemWraps = document.querySelectorAll(".item-wrap");
+                var itemDeletBtns = document.querySelectorAll(".item-delete-btn");
+                itemDeletBtns.forEach((btn, i) => {
+                    btn.onclick = () => {
+                        itemWraps[i].remove();
+                    };
+                });
+
+                j++;
+            } else {
+                searchErrMsg.textContent = "* 이미 선택한 항목입니다.";
+                searchErrMsg.style.display = "block";
+            }
         };
     });
 }
@@ -336,21 +372,93 @@ $(document).click(function (e) {
 // ====================================================================================================
 
 // validation
+
+const searchBtn = document.querySelector("#search-btn");
+const keywordInput = document.querySelector("#keyword");
+const searchErrMsg = document.querySelector(".search-err-msg");
 const writeBtn = document.querySelector("#submit-btn");
-const errMsgs = document.querySelectorAll(".err-msg");
 
+// 검색어 없이 검색 시
+searchBtn.onclick = () => {
+    if (!keywordInput.value) {
+        searchErrMsg.textContent = "* 검색어를 입력해 주세요";
+        searchErrMsg.style.display = "block";
+    } else {
+        searchErrMsg.style.display = "";
+    }
+};
+
+// 검색 결과 없거나 오류 발생 시
+function searchErr(errMsg) {
+    const searchErrMsg = document.querySelector(".search-err-msg");
+    searchErrMsg.textContent = errMsg;
+    searchErrMsg.style.display = "block";
+}
+
+const scroll = (topVal) => {
+    window.scrollTo({
+        top: topVal,
+        left: 0,
+        behavior: "smooth",
+    });
+};
+
+// 작성 제출 검증
 writeBtn.addEventListener("click", () => {
-    document.forms["write-form"].submit();
+    const errMsgs = document.querySelectorAll(".err-msg");
+    const items = document.querySelectorAll(".item-wrap");
+    const storeInfoInput = document.querySelectorAll(".store-info");
+    const infoErrMsgs = document.querySelectorAll(".info-err-msg");
+
+    let cnt = 0;
+    let validCnt = 3 + items.length;
+
+    // focus 되는 것 때문에 순서 거꾸로 작성
+
+    // 각 추천 맛집 항목에 소개 반드시 작성
+    if (items.length > 0) {
+        for (let i = items.length - 1; i >= 0; i--) {
+            if (!storeInfoInput[i].value) {
+                infoErrMsgs[i].style.display = "block";
+                storeInfoInput[i].focus();
+            } else {
+                infoErrMsgs[i].style.display = "";
+                cnt++;
+            }
+        }
+    }
+
+    // 맛집 소개 하나 이상 선택
+    if (items.length == 0) {
+        errMsgs[2].textContent = "* 맛집을 하나 이상 선택해 주세요";
+        errMsgs[2].style.display = "block";
+    } else {
+        errMsgs[2].style.display = "";
+        cnt++;
+    }
+
+    // 지역 반드시 선택
+    if (selectedRegion.textContent == "지역") {
+        errMsgs[1].style.display = "block";
+        scroll(100);
+    } else {
+        errMsgs[1].style.display = "";
+        cnt++;
+    }
+
+    // 제목 반드시 작성
+    if (!titleInput.value) {
+        errMsgs[0].style.display = "block";
+        titleInput.focus();
+    } else {
+        errMsgs[0].style.display = "";
+        cnt++;
+    }
+
+    // console.log("작성된 개수 : ", cnt);
+    // console.log("제출해야 하는 개수 : ", validCnt);
+
+    if (cnt == validCnt) {
+        document.forms["write-form"].submit();
+    }
 });
-
-// 제목, 지역, 맛집 소개 반드시 작성
-// 맛집 하나 이상 선택
-// 추가한 추천 맛집 항목은 주소 or 좌표도 같이 제출 (상세페이지에서 마커 표시하기 위해)
-// (이미 선택한 맛집 추가 선택 안되게)
-// (마커 클릭 시에도 맛집 항목에 추가되게 - ...하지말자...)
-
-// 입력 없이 검색하면 검색어 입력 요구
-// 위 line 47, 50 - alert 말고 로그인 페이지같은 alert로
-
-// 인포윈도우 구려
-// 커스텀 오버레이로?? 하지만... 너무 괴로운걸
