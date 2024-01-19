@@ -8,6 +8,8 @@ const $modalAddBtn = document.querySelector("#modal-add-btn");
 const $closeModalBtn = document.querySelector("#close-btn");
 const $modalDate = document.querySelector("#modal-date");
 const $modalPlace = document.querySelector("#modal-place");
+const $modalResultArr = document.querySelectorAll("#result-wrap > div");
+const resultArr = ["win", "draw", "lose", "cancel"];
 
 // 왼쪽 ------------------------------------------------------------------------
 const clickMenuBtn = (num) => {
@@ -78,6 +80,8 @@ $userModifyBtn.addEventListener("click", clickUserModifyBtn);
 const recordArr = [
     { recordDate: "2024.1.3", recordResult: "cancel" },
     { recordDate: "2024.1.15", recordResult: "win" },
+    { recordDate: "2024.1.9", recordResult: "lose" },
+    { recordDate: "2024.1.31", recordResult: "draw" },
     { recordDate: "2024.2.14", recordResult: "win" },
 ];
 
@@ -86,20 +90,34 @@ const diraySetting = () => {
     const $month = document.querySelector(".year-month");
     const $dateArr = document.querySelectorAll(".dates .day span");
 
-    // 직관 기록 셋팅
-    recordArr.forEach((record) => {
-        $dateArr.forEach((date) => {
-            let that = `${$month.innerText}.${date.innerText}`;
+    // 기록 셋팅 + 모달창 열리기 
+    $dateArr.forEach((date) => {
+
+        let that = `${$month.innerText}.${date.innerText}`;
+
+        recordArr.forEach((record) => {
             if (record.recordDate == that) { // 기록 있으면 
                 date.classList.add(`${record.recordResult}`);
             }
         })
-    });
-    // 모달창 열리기
-    $dateArr.forEach((date) => {
+
         date.onclick = () => {
             $modal.style.visibility = `visible`;
             $modalDate.innerHTML = `${$month.innerText}.${date.innerText}`;
+
+            // 시작 셋팅
+            $modalResultArr.forEach((modalResult) => {
+                modalResult.style.opacity = ``;
+            })
+
+            recordArr.forEach((record) => {
+                let recordDateLast = record.recordDate.split(".")[2];
+                if(recordDateLast == date.innerHTML) {
+                    index = resultArr.indexOf(`${record.recordResult}`);
+                    $modalResultArr[index].style.opacity = `1`;
+                }
+            })
+            
         };
     });
     // 모달창 닫히기
@@ -115,7 +133,6 @@ const $resultArr = document.querySelectorAll("#result-wrap > div");
 const $resultInput = document.querySelector("#modal-result-input");
 let resultCheck = false;
 const $dirayErrMsg = document.querySelector(".diray-modal-items .error-msg");
-const resultArr = ["win", "draw", "lose", "cancel"];
 
 // 경기결과 setting
 $resultArr.forEach((text, index) => {

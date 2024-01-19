@@ -161,4 +161,14 @@
     width: 310px;
     height: 211px;
     border-radius: 5px;
+    padding: 15px;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+.news-item  {
+    color: #636363;
+    &:hover {
+        text-decoration: underline;
+    }
 }
